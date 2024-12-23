@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Content } from '@prismicio/client';
-	import { PrismicLink, PrismicText } from '@prismicio/svelte';
+	import { PrismicImage, PrismicLink, PrismicText } from '@prismicio/svelte';
 
 	import Bounded from './Bounded.svelte';
 
@@ -20,7 +20,7 @@
 	<div class=" lg:pb-12">
 		<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 			<header
-				class="flex items-center justify-between py-4 md:py-8 bg-black bg-opacity-35 px-12 rounded-2xl"
+				class="flex items-center justify-between py-1 md:py-2 bg-black bg-opacity-35 px-6 rounded-2xl"
 			>
 				<!-- logo - start -->
 				<a
@@ -28,7 +28,7 @@
 					class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
 					aria-label="logo"
 				>
-					<svg
+					<!-- <svg
 						width="95"
 						height="94"
 						viewBox="0 0 95 94"
@@ -37,9 +37,13 @@
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path d="M96 0V47L48 94H0V47L48 0H96Z" />
-					</svg>
+					</svg> -->
 
-					<PrismicText field={settings.data.siteTitle} />
+					<!-- <PrismicText field={settings.data.siteTitle} /> -->
+					 <div class="w-40 h-20 mb-8">
+						 
+						 <PrismicImage field={settings.data.logo} />
+						</div>
 				</a>
 				<!-- logo - end -->
 
@@ -90,14 +94,14 @@
 
 					<a
 						href="#"
-						class="inline-block rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold shadow-sm text-white outline-none ring-indigo-300 transition duration-100 hover:bg-orange-600 focus-visible:ring active:bg-orange-700 md:text-base"
+						class="inline-block rounded-lg bg-orange-500 px-4 py-2 text-center text-sm font-semibold shadow-sm text-white outline-none ring-indigo-300 transition duration-100 hover:bg-orange-600 focus-visible:ring active:bg-orange-700 md:text-base"
 						>Contact</a
 					>
 				</div>
 
 				<button
 					type="button"
-					class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden"
+					class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-1 py-1.5 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -111,8 +115,6 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-
-					Menu
 				</button>
 				<!-- buttons - end -->
 			</header>
@@ -120,7 +122,7 @@
 			<!-- menu - start -->
 			{#if isDropdownClose}
 				<div
-					class="mx-auto  dropdown__menu__index -mt-4 hidden w-full max-w-screen-sm overflow-hidden rounded-lg border bg-white  lg:block"
+					class="mx-auto dropdown__menu__index -mt-4 hidden w-full max-w-screen-sm overflow-hidden rounded-lg border bg-white lg:block"
 				>
 					<div class="m-6 mb-10 grid grid-cols-2 gap-8">
 						<!-- link - start -->
@@ -249,6 +251,5 @@
 <style>
 	.dropdown__menu__index {
 		z-index: 1000;
-		
 	}
 </style>
