@@ -32,7 +32,7 @@
 	<div class="video-content z-40 space-y-2">
 		<h1 class="text-6xl font-light mb-12">Luxury Outdoor Spaces</h1>
 		<button
-			class="flex-shrink-0 text-white bg-orange-500 border-0 shadow-sm py-2 px-8 focus:outline-none hover:bg-orange-600 rounded text-lg mt-10 sm:mt-0"
+			class="flex-shrink-0 text-white bg-orange-500 border-0 shadow-lg py-1.5 px-4 focus:outline-none hover:bg-orange-600 rounded-xl text-md mt-10 sm:mt-0"
 			>Let's talk about your project</button
 		>
 	</div>

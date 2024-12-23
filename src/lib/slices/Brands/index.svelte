@@ -8,7 +8,7 @@
 	<div class="bg-black text-white py-6 sm:py-8 lg:py-12">
 		<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 			<div class="mb-4 flex flex-col items-center md:mb-8 lg:flex-row lg:justify-between">
-				<h2 class="mb-2 text-center text-2xl font-bold text-white lg:mb-0 lg:text-3xl">
+				<h2 class="mb-2 text-center sm:text-3xl text-7xl font-medium title-font text-orange-500">
 					Trusted by the best
 				</h2>
 

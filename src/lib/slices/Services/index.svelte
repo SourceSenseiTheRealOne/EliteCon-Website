@@ -9,9 +9,9 @@
 	data-slice-variation={slice.variation}
 	class="text-white body-font bg-black"
 >
-	<div class="container px-5 py-24 mx-auto">
+	<div class="container px-12 py-24 mx-auto">
 		<div class="flex flex-col text-center w-full mb-20">
-			<h1 class="sm:text-3xl text-6xl font-medium title-font mb-4 text-orange-500">Services</h1>
+			<h2 class="sm:text-3xl text-7xl font-medium title-font mb-4 text-orange-500">Services</h2>
 			<p class="lg:w-2/3 mx-auto leading-relaxed text-base">
 				Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke
 				farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies

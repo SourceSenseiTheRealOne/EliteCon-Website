@@ -5,11 +5,11 @@
 </script>
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	<div class="bg-white py-6 sm:py-8 lg:py-12">
+	<div class="bg-white py-6 sm:py-8 lg:py-12 mt-8 mb-12">
 		<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 			<!-- text - start -->
 			<div class="mb-10 md:mb-16">
-				<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+				<h2 class=" sm:text-3xl text-7xl mb-16 text-black font-bold text-center md:mb-6">
 					About Us
 				</h2>
 
