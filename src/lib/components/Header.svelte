@@ -100,7 +100,7 @@
 
 				<button
 					type="button"
-					class="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-1 py-1.5 text-sm font-semibold text-white ring-orange-300 hover:bg-gray-300 focus-visible:ring active:text-white md:text-base lg:hidden"
+					class="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-1 py-1.5 text-sm font-semibold text-white ring-orange-300 hover:bg-gray-300 focus-visible:ring active:text-white md:text-base lg:hidden"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
