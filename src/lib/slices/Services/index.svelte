@@ -21,7 +21,7 @@
 			</p>
 		</div>
 		<div class="flex flex-wrap -m-4">
-			<div class="lg:w-2/3 sm:w-1/2 p-4">
+			<div class="lg:w-1/3 sm:w-1/2 p-4">
 				<div class="flex relative">
 					<img
 						alt="gallery"
