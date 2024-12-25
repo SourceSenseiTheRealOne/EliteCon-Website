@@ -28,8 +28,8 @@
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class=" text-lg font-semibold text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
-					width="1.65em"
-					height="1.65em"
+					width="1.55em"
+					height="1.55em"
 					viewBox="0 0 256 256"
 					{...$$props}
 					><path
