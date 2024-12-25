@@ -6,6 +6,7 @@
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 
 	import Heading from './Heading.svelte';
+	import ButtonLink from '$lib/components/ButtonLink.svelte';
 
 	export let slice: Content.HeroSlice;
 </script>
@@ -30,10 +31,11 @@
 	<div class="absolute left-0 top-0 h-full w-full bg-black opacity-50"></div>
 
 	<div class="video-content z-40 space-y-2">
-		<h1 class="text-6xl font-light mb-12">Luxury Outdoor Spaces</h1>
-		<button
+		<h1 class="text-6xl font-light mb-12">Luxury Outdoor <span class="text-orange-200">Spaces</span></h1>
+		<ButtonLink class="cursor-pointer">Let's talk about your project</ButtonLink>
+		<!-- <button
 			class="flex-shrink-0 text-white bg-orange-500 border-0 shadow-lg py-2 px-4 focus:outline-none hover:bg-orange-600 rounded-xl text-md mt-10 sm:mt-0"
 			>Let's talk about your project</button
-		>
+		> -->
 	</div>
 </section>

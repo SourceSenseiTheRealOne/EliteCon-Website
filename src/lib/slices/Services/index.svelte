@@ -7,11 +7,11 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="text-white body-font bg-black"
+	class="text-white body-font px-24 py-20 flex items-center"
 >
-	<div class="container px-12 py-24 mx-auto">
-		<div class="flex flex-col text-center w-full mb-20">
-			<h2 class="sm:text-3xl text-7xl font-medium title-font mb-4 text-orange-500">Services</h2>
+	<div class="container mx-auto">
+		<div class="flex flex-col text-center w-full">
+			<h2 class="text-2xl lg:text-6xl mb-4 font-medium title-font text-black">Services</h2>
 			<p class="lg:w-2/3 mx-auto leading-relaxed text-base">
 				Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke
 				farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies

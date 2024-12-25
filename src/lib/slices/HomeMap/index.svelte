@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ButtonLink from '$lib/components/ButtonLink.svelte';
 	import type { Content } from '@prismicio/client';
 
 	export let slice: Content.HomeMapSlice;
@@ -26,6 +27,7 @@
 		<div
 			class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md"
 		>
+		
 			<h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
 			<p class="leading-relaxed mb-5 text-gray-600">
 				Post-ironic portland shabby chic echo park, banjo fashion axe
@@ -47,8 +49,10 @@
 					class="w-full bg-white rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
 				></textarea>
 			</div>
+			<!-- <ButtonLink class="cursor-pointer">Submit</ButtonLink> -->
+			
 			<button
-				class="text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded text-lg"
+				class="text-white bg-orange-400 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded text-lg"
 				>Button</button
 			>
 			<p class="text-xs text-gray-500 mt-3">

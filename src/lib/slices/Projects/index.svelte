@@ -8,11 +8,17 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="text-gray-600 body-font"
+	class="py-20 px-24"
 >
-	<h2 class="sm:text-3xl text-7xl mb-8 text-black font-bold text-center mt-20">
+	<h2 class="text-2xl lg:text-6xl mb-4 font-medium title-font text-black text-center">Featured Projects</h2>
+
+	<!-- <h2 class="text-2xl lg:text-6xl mb-4 font-medium title-font text-black text-center">
+	<PrismicRichText field={slice.primary.title} />
+</h2> -->
+
+	<!-- <h2 class="sm:text-3xl text-7xl mb-8 text-white font-bold text-center mt-20">
 		<PrismicRichText field={slice.primary.title} />
-	</h2>
+	</h2> -->
 	<div class="container px-12 py-24 mx-auto">
 		<div class="flex flex-wrap -m-4">
 			<div class="lg:w-1/4 md:w-1/2 p-4 w-full">
