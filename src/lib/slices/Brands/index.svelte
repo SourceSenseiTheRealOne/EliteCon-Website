@@ -7,7 +7,7 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="px-24 py-20"
+	class="py-12 lg:px-24 lg:py-20"
 >
 	<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 		<div class="mb-4 flex flex-col items-center md:mb-8 lg:flex-row lg:justify-between">
@@ -15,7 +15,7 @@
 				Trusted by the best
 			</h2> -->
 
-			<h2 class="text-2xl lg:text-6xl mb-4 font-medium title-font text-black">
+			<h2 class="text-4xl lg:text-6xl mb-4 font-medium title-font text-black">
 				Trusted by the best
 			</h2>
 

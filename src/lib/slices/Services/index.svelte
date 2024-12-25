@@ -7,19 +7,21 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="text-white body-font px-24 py-20 flex items-center"
+	class="text-white py-12 lg:px-24 lg:py-20 flex items-center"
 >
 	<div class="container mx-auto">
-		<div class="flex flex-col text-center w-full">
-			<h2 class="text-2xl lg:text-6xl mb-4 font-medium title-font text-black">Services</h2>
-			<p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+		<div class="flex flex-col items-center text-center w-full">
+			<h2 class="text-4xl lg:text-6xl lg:mb-4 font-medium text-black uppercase text-nowrap">
+				Our Services
+			</h2>
+			<p class="py-4 text-black leading-relaxed text-base mb-2">
 				Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke
 				farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies
 				heirloom.
 			</p>
 		</div>
 		<div class="flex flex-wrap -m-4">
-			<div class="lg:w-1/3 sm:w-1/2 p-4">
+			<div class="lg:w-2/3 sm:w-1/2 p-4">
 				<div class="flex relative">
 					<img
 						alt="gallery"
