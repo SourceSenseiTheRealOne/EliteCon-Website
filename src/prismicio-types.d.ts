@@ -847,6 +847,16 @@ export interface ServicesSliceDefaultPrimaryCardItem {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * Service Page Link field in *Services → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: services.default.primary.card[].service_page_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	service_page_link: prismic.LinkField;
 }
 
 /**

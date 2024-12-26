@@ -43,7 +43,7 @@
 		<!-- logo - start -->
 		<a
 			href="/"
-			class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
+			class="inline-flex items-center text-2xl font-bold text-white md:text-3xl"
 			aria-label="logo"
 		>
 			<PrismicImage class="lg:w-40 lg:h-16 w-fit h-16" field={settings.data.logo} />
@@ -51,11 +51,11 @@
 		<!-- logo - end -->
 
 		<!-- nav - start -->
-		<nav class="hidden gap-12 lg:flex items-center">
+		<nav class="hidden gap-6 lg:flex items-center">
 			{#each navigation.data?.links as item}
 				<a
 					href="#"
-					class="text-lg font-semibold text-white transition duration-100 hover:text-orange-200 active:text-orange-300"
+					class="text-lg font-normal cursor-pointer text-white transition duration-100 hover:text-orange-200 active:text-orange-300"
 				>
 					<PrismicLink field={item.link}>
 						<PrismicText field={item.label} />
@@ -65,11 +65,11 @@
 
 			<div class="flex items-center justify-self-center text-center">
 				<li class="relative text-center items-center flex group">
-					<button
-						class="gap-1 text-lg font-semibold text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
+					<a
+						class="text-lg font-normal cursor-pointer text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
 					>
-						Products
-					</button>
+						Pools
+					</a>
 					<!-- Dropdown menu -->
 					<div
 						class="hidden group-hover:block rounded-xl lg:shadow-lg bg-black bg-opacity-75 border-orange-400 border absolute top-full w-max mt-1"

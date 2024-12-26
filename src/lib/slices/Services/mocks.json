@@ -62,7 +62,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
@@ -80,7 +79,22 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
+								}
+							],
+							[
+								"service_page_link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "014c5455-9e63-4b8c-806d-7d9c4538919f",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "money"
+									}
 								}
 							]
 						]

@@ -61,6 +61,17 @@
                   "constraint": {},
                   "thumbnails": []
                 }
+              },
+              "service_page_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Service Page Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
               }
             }
           }
