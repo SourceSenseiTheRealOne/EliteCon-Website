@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ButtonLink from '$lib/components/ButtonLink.svelte';
+	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import type { Content } from '@prismicio/client';
 
 	export let slice: Content.AboutUsSlice;
@@ -14,12 +15,11 @@
 		<!-- text - start -->
 		<div class="mb-10 md:mb-16">
 			<h2 class="text-4xl lg:text-6xl mb-4 font-medium text-nowrap text-orange-200 text-center">
-				About Us
+				<PrismicRichText field={slice.primary.title} />
 			</h2>
 
 			<p class="mx-auto max-w-screen-md text-center text-white md:text-lg">
-				This is a section of some simple filler text, also known as placeholder text. It shares some
-				characteristics of a real written text but is random or otherwise generated.
+				<PrismicRichText field={slice.primary.description} />
 			</p>
 		</div>
 		<!-- text - end -->

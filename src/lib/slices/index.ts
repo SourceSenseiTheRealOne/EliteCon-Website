@@ -2,11 +2,16 @@
 
 import AboutUs from './AboutUs/index.svelte';
 import Brands from './Brands/index.svelte';
+import BuildingSteps from './BuildingSteps/index.svelte';
 import Footer from './Footer/index.svelte';
+import FrequentQuestions from './FrequentQuestions/index.svelte';
 import Hero from './Hero/index.svelte';
 import HomeMap from './HomeMap/index.svelte';
 import Image from './Image/index.svelte';
 import ImageCards from './ImageCards/index.svelte';
+import Portfolio from './Portfolio/index.svelte';
+import ProductInfoLeft from './ProductInfoLeft/index.svelte';
+import ProductInfoRight from './ProductInfoRight/index.svelte';
 import Projects from './Projects/index.svelte';
 import Quote from './Quote/index.svelte';
 import Services from './Services/index.svelte';
@@ -17,11 +22,16 @@ import TextWithImage from './TextWithImage/index.svelte';
 export const components = {
 	about_us: AboutUs,
 	brands: Brands,
+	building_steps: BuildingSteps,
 	footer: Footer,
+	frequent_questions: FrequentQuestions,
 	hero: Hero,
 	home_map: HomeMap,
 	image: Image,
 	image_cards: ImageCards,
+	portfolio: Portfolio,
+	product_info_left: ProductInfoLeft,
+	product_info_right: ProductInfoRight,
 	projects: Projects,
 	quote: Quote,
 	services: Services,

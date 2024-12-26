@@ -1,8 +1,8 @@
 {
-  "id": "about_us",
+  "id": "building_steps",
   "type": "SharedSlice",
-  "name": "AboutUs",
-  "description": "AboutUs",
+  "name": "BuildingSteps",
+  "description": "BuildingSteps",
   "variations": [
     {
       "id": "default",
@@ -18,7 +18,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,em"
+            "multi": "heading2,strong,em"
           }
         },
         "description": {
@@ -28,6 +28,14 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

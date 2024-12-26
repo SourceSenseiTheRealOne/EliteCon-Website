@@ -35,6 +35,21 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"portfolio": {
+							"type": "SharedSlice"
+						},
+						"frequent_questions": {
+							"type": "SharedSlice"
+						},
+						"building_steps": {
+							"type": "SharedSlice"
+						},
+						"product_info_left": {
+							"type": "SharedSlice"
+						},
+						"product_info_right": {
+							"type": "SharedSlice"
+						},
 						"footer": {
 							"type": "SharedSlice"
 						},

@@ -1,0 +1,41 @@
+<script lang="ts">
+	import type { Content } from '@prismicio/client';
+	import { PrismicImage, PrismicRichText } from '@prismicio/svelte';
+
+	export let slice: Content.ProductInfoRightSlice;
+</script>
+
+<section
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+	class=" py-6 sm:py-8 lg:py-12"
+>
+	<div class="mx-auto max-w-screen-xl px-4 md:px-8 items-center flex justify-center">
+		<div class="grid gap-8 md:grid-cols-2 lg:gap-12">
+			<div>
+				<div class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
+					<PrismicImage
+						class="h-full w-full object-cover object-center"
+						field={slice.primary.image}
+					/>
+				</div>
+			</div>
+
+			<div class="md:pt-8">
+				<!-- <p class="text-center font-bold text-indigo-500 md:text-left">
+					<PrismicRichText field={slice.primary.tag} />
+				</p> -->
+
+				<h1
+					class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left"
+				>
+					<PrismicRichText field={slice.primary.title} />
+				</h1>
+
+				<p class="mb-6 text-gray-500 sm:text-lg md:mb-8">
+					<PrismicRichText field={slice.primary.description} />
+				</p>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,8 +1,8 @@
 {
-  "id": "about_us",
+  "id": "product_info_right",
   "type": "SharedSlice",
-  "name": "AboutUs",
-  "description": "AboutUs",
+  "name": "ProductInfoRight",
+  "description": "ProductInfoRight",
   "variations": [
     {
       "id": "default",
@@ -18,13 +18,30 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,em"
+            "multi": "heading2,em,strong"
           }
         },
         "description": {
           "type": "StructuredText",
           "config": {
             "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "tag": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tag",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em"

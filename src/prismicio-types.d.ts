@@ -61,6 +61,11 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
 >;
 
 type PageDocumentDataSlicesSlice =
+	| PortfolioSlice
+	| FrequentQuestionsSlice
+	| BuildingStepsSlice
+	| ProductInfoLeftSlice
+	| ProductInfoRightSlice
 	| FooterSlice
 	| AboutUsSlice
 	| BrandsSlice
@@ -333,6 +338,68 @@ type BrandsSliceVariation = BrandsSliceDefault;
 export type BrandsSlice = prismic.SharedSlice<'brands', BrandsSliceVariation>;
 
 /**
+ * Primary content in *BuildingSteps → Default → Primary*
+ */
+export interface BuildingStepsSliceDefaultPrimary {
+	/**
+	 * Title field in *BuildingSteps → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: building_steps.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *BuildingSteps → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: building_steps.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Image field in *BuildingSteps → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: building_steps.default.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for BuildingSteps Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BuildingStepsSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<BuildingStepsSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *BuildingSteps*
+ */
+type BuildingStepsSliceVariation = BuildingStepsSliceDefault;
+
+/**
+ * BuildingSteps Shared Slice
+ *
+ * - **API ID**: `building_steps`
+ * - **Description**: BuildingSteps
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BuildingStepsSlice = prismic.SharedSlice<'building_steps', BuildingStepsSliceVariation>;
+
+/**
  * Primary content in *Footer → Default → Primary*
  */
 export interface FooterSliceDefaultPrimary {
@@ -373,6 +440,96 @@ type FooterSliceVariation = FooterSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type FooterSlice = prismic.SharedSlice<'footer', FooterSliceVariation>;
+
+/**
+ * Item in *FrequentQuestions → Default → Primary → Card*
+ */
+export interface FrequentQuestionsSliceDefaultPrimaryCardItem {
+	/**
+	 * Title field in *FrequentQuestions → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: frequent_questions.default.primary.card[].title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Answer field in *FrequentQuestions → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: frequent_questions.default.primary.card[].answer
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FrequentQuestions → Default → Primary*
+ */
+export interface FrequentQuestionsSliceDefaultPrimary {
+	/**
+	 * Title field in *FrequentQuestions → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: frequent_questions.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *FrequentQuestions → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: frequent_questions.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Card field in *FrequentQuestions → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: frequent_questions.default.primary.card[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	card: prismic.GroupField<Simplify<FrequentQuestionsSliceDefaultPrimaryCardItem>>;
+}
+
+/**
+ * Default variation for FrequentQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentQuestionsSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<FrequentQuestionsSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *FrequentQuestions*
+ */
+type FrequentQuestionsSliceVariation = FrequentQuestionsSliceDefault;
+
+/**
+ * FrequentQuestions Shared Slice
+ *
+ * - **API ID**: `frequent_questions`
+ * - **Description**: FrequentQuestions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentQuestionsSlice = prismic.SharedSlice<
+	'frequent_questions',
+	FrequentQuestionsSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -664,6 +821,253 @@ type ImageCardsSliceVariation = ImageCardsSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ImageCardsSlice = prismic.SharedSlice<'image_cards', ImageCardsSliceVariation>;
+
+/**
+ * Item in *Portfolio → Default → Primary → Card*
+ */
+export interface PortfolioSliceDefaultPrimaryCardItem {
+	/**
+	 * Title field in *Portfolio → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.card[].title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *Portfolio → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.card[].description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Image field in *Portfolio → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.card[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Portfolio → Default → Primary*
+ */
+export interface PortfolioSliceDefaultPrimary {
+	/**
+	 * Title field in *Portfolio → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *Portfolio → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Card field in *Portfolio → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.card[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	card: prismic.GroupField<Simplify<PortfolioSliceDefaultPrimaryCardItem>>;
+}
+
+/**
+ * Default variation for Portfolio Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<PortfolioSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Portfolio*
+ */
+type PortfolioSliceVariation = PortfolioSliceDefault;
+
+/**
+ * Portfolio Shared Slice
+ *
+ * - **API ID**: `portfolio`
+ * - **Description**: Portfolio
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSlice = prismic.SharedSlice<'portfolio', PortfolioSliceVariation>;
+
+/**
+ * Primary content in *ProductInfoLeft → Default → Primary*
+ */
+export interface ProductInfoLeftSliceDefaultPrimary {
+	/**
+	 * Title field in *ProductInfoLeft → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: product_info_left.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *ProductInfoLeft → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: product_info_left.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Image field in *ProductInfoLeft → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: product_info_left.default.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Tag field in *ProductInfoLeft → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: product_info_left.default.primary.tag
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	tag: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ProductInfoLeft Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProductInfoLeftSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<ProductInfoLeftSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *ProductInfoLeft*
+ */
+type ProductInfoLeftSliceVariation = ProductInfoLeftSliceDefault;
+
+/**
+ * ProductInfoLeft Shared Slice
+ *
+ * - **API ID**: `product_info_left`
+ * - **Description**: ProductInfoLeft
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProductInfoLeftSlice = prismic.SharedSlice<
+	'product_info_left',
+	ProductInfoLeftSliceVariation
+>;
+
+/**
+ * Primary content in *ProductInfoRight → Default → Primary*
+ */
+export interface ProductInfoRightSliceDefaultPrimary {
+	/**
+	 * Title field in *ProductInfoRight → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: product_info_right.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *ProductInfoRight → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: product_info_right.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Image field in *ProductInfoRight → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: product_info_right.default.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Tag field in *ProductInfoRight → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: product_info_right.default.primary.tag
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	tag: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ProductInfoRight Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProductInfoRightSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<ProductInfoRightSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *ProductInfoRight*
+ */
+type ProductInfoRightSliceVariation = ProductInfoRightSliceDefault;
+
+/**
+ * ProductInfoRight Shared Slice
+ *
+ * - **API ID**: `product_info_right`
+ * - **Description**: ProductInfoRight
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProductInfoRightSlice = prismic.SharedSlice<
+	'product_info_right',
+	ProductInfoRightSliceVariation
+>;
 
 /**
  * Item in *Projects → Default → Primary → Card*
@@ -1240,10 +1644,19 @@ declare module '@prismicio/client' {
 			BrandsSliceDefaultPrimary,
 			BrandsSliceVariation,
 			BrandsSliceDefault,
+			BuildingStepsSlice,
+			BuildingStepsSliceDefaultPrimary,
+			BuildingStepsSliceVariation,
+			BuildingStepsSliceDefault,
 			FooterSlice,
 			FooterSliceDefaultPrimary,
 			FooterSliceVariation,
 			FooterSliceDefault,
+			FrequentQuestionsSlice,
+			FrequentQuestionsSliceDefaultPrimaryCardItem,
+			FrequentQuestionsSliceDefaultPrimary,
+			FrequentQuestionsSliceVariation,
+			FrequentQuestionsSliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
@@ -1263,6 +1676,19 @@ declare module '@prismicio/client' {
 			ImageCardsSliceDefaultPrimary,
 			ImageCardsSliceVariation,
 			ImageCardsSliceDefault,
+			PortfolioSlice,
+			PortfolioSliceDefaultPrimaryCardItem,
+			PortfolioSliceDefaultPrimary,
+			PortfolioSliceVariation,
+			PortfolioSliceDefault,
+			ProductInfoLeftSlice,
+			ProductInfoLeftSliceDefaultPrimary,
+			ProductInfoLeftSliceVariation,
+			ProductInfoLeftSliceDefault,
+			ProductInfoRightSlice,
+			ProductInfoRightSliceDefaultPrimary,
+			ProductInfoRightSliceVariation,
+			ProductInfoRightSliceDefault,
 			ProjectsSlice,
 			ProjectsSliceDefaultPrimaryCardItem,
 			ProjectsSliceDefaultPrimary,
