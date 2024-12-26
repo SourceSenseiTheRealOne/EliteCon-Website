@@ -26,7 +26,7 @@
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/600x360"
+						src="https://dummyimage.com/600x600"
 					/>
 					<div
 						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
@@ -42,7 +42,7 @@
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/600x360"
+						src="https://dummyimage.com/600x600"
 					/>
 					<div
 						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
@@ -58,7 +58,7 @@
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/600x360"
+						src="https://dummyimage.com/600x600"
 					/>
 					<div
 						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
@@ -74,7 +74,7 @@
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/600x360"
+						src="https://dummyimage.com/600x600"
 					/>
 					<div
 						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
@@ -90,7 +90,7 @@
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/600x360"
+						src="https://dummyimage.com/600x600"
 					/>
 					<div
 						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
@@ -106,7 +106,7 @@
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/600x360"
+						src="https://dummyimage.com/600x600"
 					/>
 					<div
 						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"

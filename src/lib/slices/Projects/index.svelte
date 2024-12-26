@@ -20,7 +20,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/420x260"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
@@ -34,7 +34,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/421x261"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
@@ -48,7 +48,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/422x262"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
@@ -62,7 +62,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/423x263"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
@@ -76,7 +76,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/424x264"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
@@ -90,7 +90,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/425x265"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
@@ -104,7 +104,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/427x267"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
@@ -118,7 +118,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/428x268"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
@@ -132,7 +132,7 @@
 				<img
 					alt="ecommerce"
 					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/428x268"
+					src="https://dummyimage.com/600x600"
 				/>
 			</a>
 			<div class="mt-4">
