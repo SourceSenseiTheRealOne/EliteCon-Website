@@ -52,8 +52,8 @@
 			<!-- <ButtonLink class="cursor-pointer">Submit</ButtonLink> -->
 			
 			<button
-				class="text-white bg-orange-400 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded text-lg"
-				>Button</button
+				class="text-white font-semibold bg-orange-400 border-0 py-2 px-6 focus:outline-none hover:bg-orange-500 rounded text-lg"
+				>Submit</button
 			>
 			<p class="text-xs text-gray-500 mt-3">
 				Chicharrones blog helvetica normcore iceland tousled brook viral artisan.

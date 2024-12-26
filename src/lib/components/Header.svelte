@@ -64,18 +64,15 @@
 			{/each}
 
 			<div class="flex items-center justify-self-center text-center">
-				<li class="relative text-center items-center flex">
+				<li class="relative text-center items-center flex group">
 					<button
-						data-target="dropdown-default"
-						class="dropdown-toggle gap-1 text-lg font-semibold text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
+						class="gap-1 text-lg font-semibold text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
 					>
 						Products
 					</button>
 					<!-- Dropdown menu -->
 					<div
-						id="dropdown-default"
-						class="dropdown-menu rounded-xl lg:shadow-lg bg-black bg-opacity-75 border-orange-400 border relative lg:absolute top-full w-max mt-4 open"
-						aria-labelledby="dropdown-default"
+						class="hidden group-hover:block rounded-xl lg:shadow-lg bg-black bg-opacity-75 border-orange-400 border absolute top-full w-max mt-1"
 					>
 						<ul class="py-2">
 							<li>

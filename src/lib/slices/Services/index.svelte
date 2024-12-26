@@ -20,130 +20,100 @@
 				heirloom.
 			</p>
 		</div>
-		<div class="flex flex-wrap -m-4">
-			<div class="lg:w-1/3 sm:w-1/2 p-4">
-				<div class="flex relative">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
+			<div class="p-4 flex justify-center">
+				<div class="lg:w-96 lg:h-96 w-80 h-80 aspect-square relative">
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
 						src="https://dummyimage.com/600x360"
 					/>
 					<div
-						class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
 					>
-						<h2 class="tracking-widest text-sm title-font font-medium text-orange-500 mb-1">
-							THE SUBTITLE
-						</h2>
-						<h1 class="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
-						<p class="leading-relaxed">
-							Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled
-							waistcoat.
-						</p>
+						<h3 class="title-font text-4xl font-medium text-black underline cursor-pointer mb-3">
+							SERVICE
+						</h3>
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-1/3 sm:w-1/2 p-4">
-				<div class="flex relative">
+			<div class="p-4 flex justify-center">
+				<div class="lg:w-96 lg:h-96 w-80 h-80 aspect-square relative">
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/601x361"
+						src="https://dummyimage.com/600x360"
 					/>
 					<div
-						class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
 					>
-						<h2 class="tracking-widest text-sm title-font font-medium text-orange-500 mb-1">
-							THE SUBTITLE
-						</h2>
-						<h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-						<p class="leading-relaxed">
-							Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled
-							waistcoat.
-						</p>
+						<h3 class="title-font text-4xl font-medium text-black underline cursor-pointer mb-3">
+							SERVICE
+						</h3>
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-1/3 sm:w-1/2 p-4">
-				<div class="flex relative">
+			<div class="p-4 flex justify-center">
+				<div class="lg:w-96 lg:h-96 w-80 h-80 aspect-square relative">
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/603x363"
+						src="https://dummyimage.com/600x360"
 					/>
 					<div
-						class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
 					>
-						<h2 class="tracking-widest text-sm title-font font-medium text-orange-500 mb-1">
-							THE SUBTITLE
-						</h2>
-						<h1 class="title-font text-lg font-medium text-gray-900 mb-3">The 400 Blows</h1>
-						<p class="leading-relaxed">
-							Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled
-							waistcoat.
-						</p>
+						<h3 class="title-font text-4xl font-medium text-black underline cursor-pointer mb-3">
+							SERVICE
+						</h3>
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-1/3 sm:w-1/2 p-4">
-				<div class="flex relative">
+			<div class="p-4 flex justify-center">
+				<div class="lg:w-96 lg:h-96 w-80 h-80 aspect-square relative">
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/602x362"
+						src="https://dummyimage.com/600x360"
 					/>
 					<div
-						class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
 					>
-						<h2 class="tracking-widest text-sm title-font font-medium text-orange-500 mb-1">
-							THE SUBTITLE
-						</h2>
-						<h1 class="title-font text-lg font-medium text-gray-900 mb-3">Neptune</h1>
-						<p class="leading-relaxed">
-							Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled
-							waistcoat.
-						</p>
+						<h3 class="title-font text-4xl font-medium text-black underline cursor-pointer mb-3">
+							SERVICE
+						</h3>
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-1/3 sm:w-1/2 p-4">
-				<div class="flex relative">
+			<div class="p-4 flex justify-center">
+				<div class="lg:w-96 lg:h-96 w-80 h-80 aspect-square relative">
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/605x365"
+						src="https://dummyimage.com/600x360"
 					/>
 					<div
-						class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
 					>
-						<h2 class="tracking-widest text-sm title-font font-medium text-orange-500 mb-1">
-							THE SUBTITLE
-						</h2>
-						<h1 class="title-font text-lg font-medium text-gray-900 mb-3">Holden Caulfield</h1>
-						<p class="leading-relaxed">
-							Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled
-							waistcoat.
-						</p>
+						<h3 class="title-font text-4xl font-medium text-black underline cursor-pointer mb-3">
+							SERVICE
+						</h3>
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-1/3 sm:w-1/2 p-4">
-				<div class="flex relative">
+			<div class="p-4 flex justify-center">
+				<div class="lg:w-96 lg:h-96 w-80 h-80 aspect-square relative">
 					<img
 						alt="gallery"
 						class="absolute inset-0 w-full h-full object-cover object-center"
-						src="https://dummyimage.com/606x366"
+						src="https://dummyimage.com/600x360"
 					/>
 					<div
-						class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+						class="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
 					>
-						<h2 class="tracking-widest text-sm title-font font-medium text-orange-500 mb-1">
-							THE SUBTITLE
-						</h2>
-						<h1 class="title-font text-lg font-medium text-gray-900 mb-3">Alper Kamu</h1>
-						<p class="leading-relaxed">
-							Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled
-							waistcoat.
-						</p>
+						<h3 class="title-font text-4xl font-medium text-black underline cursor-pointer mb-3">
+							SERVICE
+						</h3>
 					</div>
 				</div>
 			</div>
