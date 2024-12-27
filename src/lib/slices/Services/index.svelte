@@ -11,7 +11,7 @@
 	data-slice-variation={slice.variation}
 	class="text-white py-12 lg:px-24 lg:py-24 flex items-center mb-12"
 >
-	<div class="container mx-auto">
+	<div class=" mx-auto">
 		<div class="flex flex-col items-center text-center w-full">
 			<h2 class="text-4xl lg:text-6xl lg:mb-12 mb-4 font-medium text-black uppercase text-nowrap">
 				Our Services
