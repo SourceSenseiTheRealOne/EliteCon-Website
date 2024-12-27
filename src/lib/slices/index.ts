@@ -9,6 +9,7 @@ import Hero from './Hero/index.svelte';
 import HomeMap from './HomeMap/index.svelte';
 import Image from './Image/index.svelte';
 import ImageCards from './ImageCards/index.svelte';
+import LatestBlogs from './LatestBlogs/index.svelte';
 import Portfolio from './Portfolio/index.svelte';
 import ProductInfoLeft from './ProductInfoLeft/index.svelte';
 import ProductInfoRight from './ProductInfoRight/index.svelte';
@@ -29,6 +30,7 @@ export const components = {
 	home_map: HomeMap,
 	image: Image,
 	image_cards: ImageCards,
+	latest_blogs: LatestBlogs,
 	portfolio: Portfolio,
 	product_info_left: ProductInfoLeft,
 	product_info_right: ProductInfoRight,

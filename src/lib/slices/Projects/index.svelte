@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import type { Content } from '@prismicio/client';
+	import { PrismicLink } from '@prismicio/svelte';
 
 	export let slice: Content.ProjectsSlice;
 </script>
@@ -8,138 +9,44 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="py-12 lg:px-24 lg:py-20"
+	class="text-white py-12 lg:px-24 lg:py-24 flex items-center mb-12"
 >
-	<h2 class="text-4xl text-nowrap lg:text-6xl mb-6 lg:mb-16 font-medium title-font text-black text-center">
-		Featured Projects
-	</h2>
-
-	<div class="flex flex-wrap justify-center gap-6 items-center">
-		<div class="flex justify-center lg:block lg:w-1/3 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-				<p class="mt-1">Description</p>
-			</div>
+	<div class="container mx-auto">
+		<div class="flex flex-col items-center text-center w-full">
+			<h2 class="text-4xl lg:text-6xl lg:mb-12 mb-4 font-medium text-black uppercase text-nowrap">
+				Featured Projects
+			</h2>
 		</div>
-	<div class="flex justify-center lg:block lg:w-1/3 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-				<p class="mt-1">Description</p>
-			</div>
-		</div>
-	<div class="flex justify-center lg:block lg:w-1/5 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-				<p class="mt-1">Description</p>
-			</div>
-		</div>
-	<div class="flex justify-center lg:block lg:w-1/3 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-				<p class="mt-1">Description</p>
-			</div>
-		</div>
-	<div class="flex justify-center lg:block lg:w-1/3 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-				<p class="mt-1">Description</p>
-			</div>
-		</div>
-	<div class="flex justify-center lg:block lg:w-1/5 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-				<p class="mt-1">Description</p>
-			</div>
-		</div>
-	<div class="flex justify-center lg:block lg:w-1/3 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-				<p class="mt-1">Description</p>
-			</div>
-		</div>
-	<div class="flex justify-center lg:block lg:w-1/3 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-				<p class="mt-1">Description</p>
-			</div>
-		</div>
-	<div class="flex justify-center lg:block lg:w-1/5 md:w-1/2 flex-col p-4 w-full">
-			<a class="block relative lg:h-80 h-72 rounded overflow-hidden aspect-square">
-				<img
-					alt="ecommerce"
-					class="object-cover object-center w-full h-full block"
-					src="https://dummyimage.com/600x600"
-				/>
-			</a>
-			<div class="mt-4">
-				<h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-				<h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-				<p class="mt-1">Description</p>
-			</div>
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 items-center max-w-screen-xl mx-auto"
+		>
+			{#each slice.primary.card as item}
+				<div class="p-1 flex justify-center">
+					<div class="lg:w-100 lg:h-100 custom__size__boxes aspect-square relative">
+						<img
+							alt="gallery"
+							class="absolute inset-0 w-full h-full object-cover object-center"
+							src="https://dummyimage.com/600x600"
+						/>
+						<div
+							class="px-4 py-6 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
+						>
+							<!-- <PrismicLink field={item.service_page_link}> -->
+							<h3 class="title-font text-4xl font-medium text-black underline cursor-pointer mb-3">
+								<PrismicRichText field={item.title} />
+							</h3>
+							<!-- </PrismicLink> -->
+						</div>
+					</div>
+				</div>
+			{/each}
 		</div>
 	</div>
 </section>
+
+<style>
+	.custom__size__boxes {
+		width: 28rem;
+		height: 22rem;
+	}
+</style>

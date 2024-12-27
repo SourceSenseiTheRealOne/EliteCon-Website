@@ -35,6 +35,9 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"latest_blogs": {
+							"type": "SharedSlice"
+						},
 						"portfolio": {
 							"type": "SharedSlice"
 						},

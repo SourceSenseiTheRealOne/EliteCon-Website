@@ -61,6 +61,7 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
 >;
 
 type PageDocumentDataSlicesSlice =
+	| LatestBlogsSlice
 	| PortfolioSlice
 	| FrequentQuestionsSlice
 	| BuildingStepsSlice
@@ -821,6 +822,93 @@ type ImageCardsSliceVariation = ImageCardsSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ImageCardsSlice = prismic.SharedSlice<'image_cards', ImageCardsSliceVariation>;
+
+/**
+ * Item in *LatestBlogs → Default → Primary → Card*
+ */
+export interface LatestBlogsSliceDefaultPrimaryCardItem {
+	/**
+	 * Title field in *LatestBlogs → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: latest_blogs.default.primary.card[].title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *LatestBlogs → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: latest_blogs.default.primary.card[].description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *LatestBlogs → Default → Primary*
+ */
+export interface LatestBlogsSliceDefaultPrimary {
+	/**
+	 * Title field in *LatestBlogs → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: latest_blogs.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *LatestBlogs → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: latest_blogs.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Card field in *LatestBlogs → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: latest_blogs.default.primary.card[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	card: prismic.GroupField<Simplify<LatestBlogsSliceDefaultPrimaryCardItem>>;
+}
+
+/**
+ * Default variation for LatestBlogs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LatestBlogsSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<LatestBlogsSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *LatestBlogs*
+ */
+type LatestBlogsSliceVariation = LatestBlogsSliceDefault;
+
+/**
+ * LatestBlogs Shared Slice
+ *
+ * - **API ID**: `latest_blogs`
+ * - **Description**: LatestBlogs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LatestBlogsSlice = prismic.SharedSlice<'latest_blogs', LatestBlogsSliceVariation>;
 
 /**
  * Item in *Portfolio → Default → Primary → Card*
@@ -1676,6 +1764,11 @@ declare module '@prismicio/client' {
 			ImageCardsSliceDefaultPrimary,
 			ImageCardsSliceVariation,
 			ImageCardsSliceDefault,
+			LatestBlogsSlice,
+			LatestBlogsSliceDefaultPrimaryCardItem,
+			LatestBlogsSliceDefaultPrimary,
+			LatestBlogsSliceVariation,
+			LatestBlogsSliceDefault,
 			PortfolioSlice,
 			PortfolioSliceDefaultPrimaryCardItem,
 			PortfolioSliceDefaultPrimary,
