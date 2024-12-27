@@ -18,11 +18,11 @@
 			</h2>
 		</div>
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 items-center max-w-screen-xl mx-auto"
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 items-center max-w-screen-xl mx-auto"
 		>
 			{#each slice.primary.card as item}
 				<div class="p-1 flex justify-center">
-					<div class="lg:w-100 lg:h-100 custom__size__boxes aspect-square relative">
+					<div class="lg:w-100 lg:h-100 custom__size__boxes relative">
 						<img
 							alt="gallery"
 							class="absolute inset-0 w-full h-full object-cover object-center"
@@ -48,7 +48,7 @@
 
 <style>
 	.custom__size__boxes {
-		width: 28rem;
+		width: 36rem;
 		height: 22rem;
 	}
 </style>
