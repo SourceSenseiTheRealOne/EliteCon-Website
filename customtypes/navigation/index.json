@@ -25,7 +25,19 @@
 							"config": {
 								"label": "Link",
 								"placeholder": "Link for navigation item",
-								"select": null
+								"select": null,
+								"repeat": true
+							}
+						},
+						"mainlinkitem": {
+							"type": "Link",
+							"config": {
+								"label": "MainLinkItem",
+								"placeholder": "",
+								"select": null,
+								"allowTargetBlank": true,
+								"allowText": true,
+								"repeat": false
 							}
 						}
 					}

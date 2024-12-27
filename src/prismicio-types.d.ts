@@ -26,7 +26,17 @@ export interface NavigationDocumentDataLinksItem {
 	 * - **API ID Path**: navigation.links[].link
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	link: prismic.LinkField;
+	link: prismic.Repeatable<prismic.LinkField>;
+
+	/**
+	 * MainLinkItem field in *Navigation → Links*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.links[].mainlinkitem
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	mainlinkitem: prismic.LinkField;
 }
 
 /**

@@ -13,8 +13,10 @@
 	const toggleDropdown = () => {
 		isDropdownClose = !isDropdownClose;
 
-		console.log(isDropdownClose);
+		// console.log(isDropdownClose);
 	};
+
+	// $: if (navigation.data) console.log(navigation.data, 'navigation.data');
 </script>
 
 <Bounded
@@ -53,57 +55,51 @@
 		<!-- nav - start -->
 		<nav class="hidden gap-6 lg:flex items-center">
 			{#each navigation.data?.links as item}
-				<a
-					href="#"
-					class="text-lg font-normal cursor-pointer text-white transition duration-100 hover:text-orange-200 active:text-orange-300"
-				>
-					<PrismicLink field={item.link}>
-						<PrismicText field={item.label} />
-					</PrismicLink></a
-				>
-			{/each}
-
-			<div class="flex items-center justify-self-center text-center">
 				<li class="relative text-center items-center flex group">
-					<a
-						class="text-lg font-normal cursor-pointer text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
-					>
-						Pools
-					</a>
-					<!-- Dropdown menu -->
-					<div
-						class="hidden group-hover:block rounded-xl lg:shadow-lg bg-black bg-opacity-75 border-orange-400 border absolute top-full w-max mt-1"
-					>
-						<ul class="py-2">
-							<li>
-								<a
-									class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium"
-									href="javascript:;"
-								>
-									Downloads
-								</a>
-							</li>
-							<li>
-								<a
-									class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium"
-									href="javascript:;"
-								>
-									Saved Files
-								</a>
-							</li>
-							<li>
-								<a
-									class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium"
-									href="javascript:;"
-								>
-									Notifications
-								</a>
+					{#if Array.isArray(item.link) && item.link.length > 1}
+						<!-- Dropdown menu with multiple links -->
+
+						<ul>
+							<li
+								class="text-lg font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
+							>
+								<PrismicText field={item.label} />
 							</li>
 						</ul>
-					</div>
+
+						<div
+							class="hidden group-hover:block rounded-xl lg:shadow-lg bg-black bg-opacity-75 border-orange-400 border absolute top-full w-max mt-1 left-1/2 transform -translate-x-1/2"
+						>
+							<ul class="py-2">
+								{#each item.link as link, index}
+									{#if link.slug !== undefined}
+										<li>
+											<PrismicLink
+												class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
+												field={link}>{link.slug}</PrismicLink
+											>
+										</li>
+									{/if}
+								{/each}
+							</ul>
+						</div>
+					{:else}
+						<!-- Single link (no dropdown) -->
+
+						<ul>
+							<li
+								class="text-lg font-normal cursor-pointer text-white transition duration-100 hover:text-orange-200 active:text-orange-300"
+							>
+								<PrismicLink field={item.mainlinkitem}>
+									<PrismicText field={item.label} />
+								</PrismicLink>
+							</li>
+						</ul>
+					{/if}
 				</li>
-			</div>
+			{/each}
 		</nav>
+
 		<!-- nav - end -->
 
 		<!-- buttons - start -->
