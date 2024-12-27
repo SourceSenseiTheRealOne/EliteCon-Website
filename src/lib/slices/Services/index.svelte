@@ -9,11 +9,11 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="text-white py-12 lg:px-24 lg:py-24 flex items-center mb-12"
+	class="text-white py-4 lg:px-24 lg:py-8 flex items-center mb-4"
 >
 	<div class=" mx-auto">
 		<div class="flex flex-col items-center text-center w-full">
-			<h2 class="text-4xl lg:text-6xl lg:mb-12 mb-4 font-medium text-black uppercase text-nowrap">
+			<h2 class="text-4xl lg:text-6xl lg:mb-8 mb-4 font-medium text-black uppercase text-nowrap">
 				Our Services
 			</h2>
 		</div>
@@ -49,6 +49,6 @@
 <style>
 	.custom__size__boxes {
 		width: 36rem;
-		height: 22rem;
+		height: 17rem;
 	}
 </style>

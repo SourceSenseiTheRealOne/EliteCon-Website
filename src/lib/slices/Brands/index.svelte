@@ -7,10 +7,10 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="py-12 lg:px-24 lg:py-20"
+	class=" py-4 lg:px-24 lg:py-8 flex items-center mb-4"
 >
 	<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-		<div class="mb-4 flex flex-col items-center md:mb-8 lg:flex-row lg:justify-between">
+		<div class="mb-4 flex flex-col items-center gap-6 md:mb-8 lg:flex-row lg:justify-between">
 			<!-- <h2 class="mb-2 text-center sm:text-3xl text-7xl font-medium title-font text-orange-500">
 				Trusted by the best
 			</h2> -->
@@ -19,8 +19,8 @@
 				Trusted by the best
 			</h2>
 
-			<p class="max-w-md text-center text-gray-400 lg:text-right">
-				Filler text is dummy text which has no meaning however looks very similar to real text.
+			<p class="max-w-sm text-center text-gray-400 lg:text-right">
+				Filler text is dummy text which has no meaning however looks very similar.
 			</p>
 		</div>
 

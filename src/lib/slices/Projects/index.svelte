@@ -9,20 +9,20 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="text-white py-12 lg:px-24 lg:py-24 flex items-center mb-12"
+	class="text-white py-4 lg:px-24 lg:py-4 flex items-center mb-4"
 >
 	<div class="container mx-auto">
 		<div class="flex flex-col items-center text-center w-full">
-			<h2 class="text-4xl lg:text-6xl lg:mb-12 mb-4 font-medium text-black uppercase text-nowrap">
+			<h2 class="text-4xl lg:text-6xl lg:mb-8 mb-4 font-medium text-black uppercase text-nowrap">
 				Featured Projects
 			</h2>
 		</div>
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 items-center max-w-screen-xl mx-auto"
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 items-center max-w-screen-xl mx-auto"
 		>
 			{#each slice.primary.card as item}
 				<div class="p-1 flex justify-center">
-					<div class="lg:w-100 lg:h-100 custom__size__boxes aspect-square relative">
+					<div class="lg:w-100 lg:h-100 custom__size__boxes relative">
 						<img
 							alt="gallery"
 							class="absolute inset-0 w-full h-full object-cover object-center"
@@ -46,7 +46,7 @@
 
 <style>
 	.custom__size__boxes {
-		width: 28rem;
-		height: 22rem;
+		width: 36rem;
+		height: 17rem;
 	}
 </style>

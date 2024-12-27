@@ -7,7 +7,7 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="bg-black py-12 lg:px-24 lg:py-20"
+	class="bg-black text-white py-4 lg:px-24 lg:py-8 flex items-center mb-4"
 >
 	<div class="mx-auto max-w-screen-xl px-4 md:px-8">
 		<h2 class="text-4xl lg:text-6xl mb-16 font-medium title-font text-orange-200 text-center">

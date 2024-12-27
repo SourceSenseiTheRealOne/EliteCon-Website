@@ -7,13 +7,13 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="bg-white py-6 sm:py-8 lg:py-24 mb-12"
+	class=" py-4 lg:px-24 lg:py-6 flex items-center mb-6"
 >
 	<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 		<!-- text - start -->
 		<div class="mb-10 md:mb-16">
 			<h2
-				class="text-4xl lg:text-6xl lg:mb-12 mb-4 font-medium text-black uppercase text-nowrap text-center"
+				class="text-4xl lg:text-6xl lg:mb-6 mb-4 font-medium text-black uppercase text-nowrap text-center"
 			>
 				Latest Posts
 			</h2>
