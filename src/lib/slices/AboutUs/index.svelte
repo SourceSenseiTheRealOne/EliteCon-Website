@@ -3,7 +3,13 @@
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import type { Content } from '@prismicio/client';
 
+	import OrangeHeading from '$lib/components/ui/OrangeHeading.svelte';
+
 	export let slice: Content.AboutUsSlice;
+
+	const components: PrismicRichText['components'] = {
+		heading2: OrangeHeading
+	};
 </script>
 
 <section
@@ -14,9 +20,7 @@
 	<div class="mx-auto max-w-screen-2xl px-4 md:px-8 lg:flex lg:flex-row lg:gap-8">
 		<!-- text - start -->
 		<div class="mb-10 md:mb-16">
-			<h2 class="text-4xl lg:text-6xl mb-4 font-medium text-nowrap text-orange-200 text-center">
-				<PrismicRichText field={slice.primary.title} />
-			</h2>
+			<PrismicRichText {components} field={slice.primary.title} />
 
 			<p class="mx-auto max-w-screen-md text-center text-white md:text-lg">
 				<PrismicRichText field={slice.primary.description} />

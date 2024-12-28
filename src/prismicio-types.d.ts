@@ -856,6 +856,26 @@ export interface LatestBlogsSliceDefaultPrimaryCardItem {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	description: prismic.RichTextField;
+
+	/**
+	 * Image field in *LatestBlogs → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: latest_blogs.default.primary.card[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * PostLink field in *LatestBlogs → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: latest_blogs.default.primary.card[].postlink
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	postlink: prismic.LinkField;
 }
 
 /**
@@ -1200,6 +1220,16 @@ export interface ProjectsSliceDefaultPrimaryCardItem {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * Project Page Link field in *Projects → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.default.primary.card[].project_page_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	project_page_link: prismic.LinkField;
 }
 
 /**
@@ -1456,6 +1486,16 @@ export interface TestimonialsSliceDefaultPrimaryCardItem {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	user_image: prismic.ImageField<never>;
+
+	/**
+	 * UserWork field in *Testimonials → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: testimonials.default.primary.card[].userwork
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	userwork: prismic.RichTextField;
 }
 
 /**

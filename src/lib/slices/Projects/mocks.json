@@ -62,7 +62,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
@@ -80,7 +79,22 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
+								}
+							],
+							[
+								"project_page_link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "5a9ca080-2ba6-4b81-8d73-9e8d2eb7e0b3",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "time"
+									}
 								}
 							]
 						]

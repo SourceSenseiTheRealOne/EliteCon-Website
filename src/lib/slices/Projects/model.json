@@ -61,6 +61,17 @@
                   "constraint": {},
                   "thumbnails": []
                 }
+              },
+              "project_page_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Project Page Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
               }
             }
           }

@@ -53,6 +53,25 @@
                   "allowTargetBlank": true,
                   "multi": "paragraph,strong,em"
                 }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "postlink": {
+                "type": "Link",
+                "config": {
+                  "label": "PostLink",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
               }
             }
           }

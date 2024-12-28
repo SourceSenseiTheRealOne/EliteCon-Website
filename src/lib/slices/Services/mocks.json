@@ -9,7 +9,7 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Prove"
+							"text": "Space"
 						}
 					}
 				]
@@ -88,8 +88,8 @@
 							[
 								"service_page_link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "014c5455-9e63-4b8c-806d-7d9c4538919f",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "https://slicemachine.dev",

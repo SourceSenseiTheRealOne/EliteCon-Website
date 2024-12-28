@@ -1,9 +1,17 @@
 <script lang="ts">
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import type { Content } from '@prismicio/client';
-	import { PrismicLink } from '@prismicio/svelte';
+	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
+
+	import CustomHeading from '$lib/components/ui/CustomHeading.svelte';
 
 	export let slice: Content.ServicesSlice;
+
+	const components: PrismicRichText['components'] = {
+		heading2: CustomHeading
+	};
+
+	$: if (slice.primary.card) console.log(slice.primary.card, 'slice.primary.card ');
 </script>
 
 <section
@@ -13,9 +21,7 @@
 >
 	<div class="mx-auto">
 		<div class="flex flex-col items-center text-center w-full">
-			<h2 class="text-4xl lg:text-6xl lg:mb-8 mb-4 font-medium text-black uppercase text-nowrap">
-				Our Services
-			</h2>
+			<PrismicRichText {components} field={slice.primary.title} />
 		</div>
 		<div
 			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 items-center max-w-screen-xl mx-auto"
@@ -23,17 +29,24 @@
 			{#each slice.primary.card as item}
 				<div class="p-1 flex justify-center">
 					<div class="lg:w-100 lg:h-100 custom__size__boxes relative">
-						<img
-							alt="gallery"
-							class="absolute inset-0 w-full h-full object-cover object-center"
-							src="https://dummyimage.com/600x600"
-						/>
+						{#if item.image && Object.keys(item.image).length > 0}
+							<PrismicImage
+								class="absolute inset-0 w-full h-full object-cover object-center"
+								field={item.image}
+							/>
+						{:else}
+							<img
+								alt="gallery"
+								class="absolute inset-0 w-full h-full object-cover object-center"
+								src="https://dummyimage.com/600x800"
+							/>
+						{/if}
 						<div
 							class="px-4 py-6 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
 						>
 							<PrismicLink field={item.service_page_link}>
 								<h3
-									class="title-font text-4xl font-medium text-black underline cursor-pointer mb-3"
+									class="title-font text-6xl font-medium text-black underline cursor-pointer mb-3 uppercase"
 								>
 									<PrismicRichText field={item.title} />
 								</h3>

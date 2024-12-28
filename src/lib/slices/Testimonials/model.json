@@ -61,6 +61,15 @@
                   "constraint": {},
                   "thumbnails": []
                 }
+              },
+              "userwork": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "UserWork",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em"
+                }
               }
             }
           }
