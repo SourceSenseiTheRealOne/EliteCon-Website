@@ -40,6 +40,31 @@ export interface NavigationDocumentDataLinksItem {
 }
 
 /**
+ * Item in *Navigation → MobileNavigation*
+ */
+export interface NavigationDocumentDataMobilenavigationItem {
+	/**
+	 * PageLink field in *Navigation → MobileNavigation*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.mobilenavigation[].pagelink
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	pagelink: prismic.LinkField;
+
+	/**
+	 * Label field in *Navigation → MobileNavigation*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.mobilenavigation[].label
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	label: prismic.RichTextField;
+}
+
+/**
  * Content for Navigation documents
  */
 interface NavigationDocumentData {
@@ -53,6 +78,17 @@ interface NavigationDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	links: prismic.GroupField<Simplify<NavigationDocumentDataLinksItem>>;
+
+	/**
+	 * MobileNavigation field in *Navigation*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.mobilenavigation[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	mobilenavigation: prismic.GroupField<Simplify<NavigationDocumentDataMobilenavigationItem>>;
 }
 
 /**
@@ -349,6 +385,41 @@ type BrandsSliceVariation = BrandsSliceDefault;
 export type BrandsSlice = prismic.SharedSlice<'brands', BrandsSliceVariation>;
 
 /**
+ * Item in *BuildingSteps → Default → Primary → Section*
+ */
+export interface BuildingStepsSliceDefaultPrimarySectionItem {
+	/**
+	 * Title field in *BuildingSteps → Default → Primary → Section*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: building_steps.default.primary.section[].title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Content field in *BuildingSteps → Default → Primary → Section*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: building_steps.default.primary.section[].content
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	content: prismic.RichTextField;
+
+	/**
+	 * Image field in *BuildingSteps → Default → Primary → Section*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: building_steps.default.primary.section[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *BuildingSteps → Default → Primary*
  */
 export interface BuildingStepsSliceDefaultPrimary {
@@ -373,14 +444,14 @@ export interface BuildingStepsSliceDefaultPrimary {
 	description: prismic.RichTextField;
 
 	/**
-	 * Image field in *BuildingSteps → Default → Primary*
+	 * Section field in *BuildingSteps → Default → Primary*
 	 *
-	 * - **Field Type**: Image
+	 * - **Field Type**: Group
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: building_steps.default.primary.image
-	 * - **Documentation**: https://prismic.io/docs/field#image
+	 * - **API ID Path**: building_steps.default.primary.section[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
-	image: prismic.ImageField<never>;
+	section: prismic.GroupField<Simplify<BuildingStepsSliceDefaultPrimarySectionItem>>;
 }
 
 /**
@@ -411,18 +482,63 @@ type BuildingStepsSliceVariation = BuildingStepsSliceDefault;
 export type BuildingStepsSlice = prismic.SharedSlice<'building_steps', BuildingStepsSliceVariation>;
 
 /**
+ * Item in *Footer → Default → Primary → NavigationColumn*
+ */
+export interface FooterSliceDefaultPrimaryNavigationcolumnItem {
+	/**
+	 * Title field in *Footer → Default → Primary → NavigationColumn*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.default.primary.navigationcolumn[].title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Link field in *Footer → Default → Primary → NavigationColumn*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.default.primary.navigationcolumn[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.Repeatable<prismic.LinkField>;
+}
+
+/**
  * Primary content in *Footer → Default → Primary*
  */
 export interface FooterSliceDefaultPrimary {
 	/**
-	 * Title field in *Footer → Default → Primary*
+	 * Logo field in *Footer → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.default.primary.logo
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
+
+	/**
+	 * Description field in *Footer → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: footer.default.primary.title
+	 * - **API ID Path**: footer.default.primary.description
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	description: prismic.RichTextField;
+
+	/**
+	 * NavigationColumn field in *Footer → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.default.primary.navigationcolumn[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	navigationcolumn: prismic.GroupField<Simplify<FooterSliceDefaultPrimaryNavigationcolumnItem>>;
 }
 
 /**
@@ -973,6 +1089,16 @@ export interface PortfolioSliceDefaultPrimaryCardItem {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * Link field in *Portfolio → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.card[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
 }
 
 /**
@@ -1767,6 +1893,7 @@ declare module '@prismicio/client' {
 			NavigationDocument,
 			NavigationDocumentData,
 			NavigationDocumentDataLinksItem,
+			NavigationDocumentDataMobilenavigationItem,
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
@@ -1783,10 +1910,12 @@ declare module '@prismicio/client' {
 			BrandsSliceVariation,
 			BrandsSliceDefault,
 			BuildingStepsSlice,
+			BuildingStepsSliceDefaultPrimarySectionItem,
 			BuildingStepsSliceDefaultPrimary,
 			BuildingStepsSliceVariation,
 			BuildingStepsSliceDefault,
 			FooterSlice,
+			FooterSliceDefaultPrimaryNavigationcolumnItem,
 			FooterSliceDefaultPrimary,
 			FooterSliceVariation,
 			FooterSliceDefault,

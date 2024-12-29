@@ -12,13 +12,50 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "Logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description": {
           "type": "StructuredText",
           "config": {
-            "label": "Title",
+            "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,strong,em"
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "navigationcolumn": {
+          "type": "Group",
+          "config": {
+            "label": "NavigationColumn",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": true
+                }
+              }
+            }
           }
         }
       },

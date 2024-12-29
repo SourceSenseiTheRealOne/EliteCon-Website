@@ -2,8 +2,13 @@
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage } from '@prismicio/svelte';
+	import Heading from './Heading.svelte';
 
 	export let slice: Content.ProductInfoLeftSlice;
+
+	const components: PrismicRichText['components'] = {
+		heading2: Heading
+	};
 </script>
 
 <section
@@ -18,24 +23,20 @@
 					<PrismicRichText field={slice.primary.tag} />
 				</p> -->
 
-				<h1
-					class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left"
-				>
-					<PrismicRichText field={slice.primary.title} />
-				</h1>
+			
+					<PrismicRichText {components} field={slice.primary.title} />
+		
 
 				<p class="mb-6 text-gray-500 sm:text-lg md:mb-8">
 					<PrismicRichText field={slice.primary.description} />
 				</p>
 			</div>
 
-			<div>
-				<div class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
-					<PrismicImage
-						class="h-full w-full object-cover object-center"
-						field={slice.primary.image}
-					/>
-				</div>
+			<div class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
+				<PrismicImage
+					class="h-full w-full object-cover object-center"
+					field={slice.primary.image}
+				/>
 			</div>
 		</div>
 	</div>

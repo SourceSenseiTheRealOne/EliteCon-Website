@@ -1,13 +1,13 @@
 <script lang="ts">
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
-	import OrangeHeading from '$lib/components/ui/OrangeHeading.svelte';
+	import Heading from './Heading.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage } from '@prismicio/svelte';
 
 	export let slice: Content.TestimonialsSlice;
 
 	const components: PrismicRichText['components'] = {
-		heading2: OrangeHeading
+		heading2: Heading
 	};
 </script>
 
