@@ -140,7 +140,7 @@
 				<!-- nav - end -->
 			</div>
 
-			<div class="border-t py-8 text-center text-sm text-gray-400">
+			<div class="border-t py-8 text-center text-sm text-gray-400 pb-36">
 				© <span>{currentYear}</span> - EliteCon - All rights reserved.
 			</div>
 		</footer>
