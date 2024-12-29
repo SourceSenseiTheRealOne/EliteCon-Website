@@ -2,7 +2,13 @@
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage, PrismicLink, PrismicRichText } from '@prismicio/svelte';
 
+	import Heading from './Heading.svelte';
+
 	export let slice: Content.PortfolioSlice;
+
+	const components: PrismicRichText['components'] = {
+		heading2: Heading
+	};
 </script>
 
 <section
@@ -10,11 +16,8 @@
 	data-slice-variation={slice.variation}
 	class=" py-6 sm:py-8 lg:py-12"
 >
-	<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-		<h2 class="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">
-			Collections
-		</h2>
-
+<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+		<PrismicRichText {components} field={slice.primary.title} />
 		<div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
 			<!-- product - start -->
 			{#each slice.primary.card as item}

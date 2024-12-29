@@ -673,16 +673,6 @@ export interface HeroSliceDefaultPrimary {
 	text: prismic.RichTextField;
 
 	/**
-	 * Button Link field in *Hero → Default → Primary*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.default.primary.buttonLink
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	buttonLink: prismic.LinkField;
-
-	/**
 	 * Button Text field in *Hero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
