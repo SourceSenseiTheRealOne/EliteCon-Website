@@ -234,13 +234,13 @@
 											>
 										</div>
 										<div class="p-2 w-full pt-3 mt-4 border-t border-gray-200 text-center">
-											<a class="text-orange-300">example@email.com</a>
+											<a href="#" class="text-orange-300">example@email.com</a>
 											<p class="leading-normal my-2">
 												49 Smith St.
 												<br />Saint Cloud, MN 56301
 											</p>
 											<span class="inline-flex">
-												<a class="text-gray-500">
+												<a href="#" class="text-gray-500">
 													<svg
 														fill="currentColor"
 														stroke-linecap="round"
@@ -253,7 +253,7 @@
 														></path>
 													</svg>
 												</a>
-												<a class="ml-4 text-gray-500">
+												<a href="#" class="ml-4 text-gray-500">
 													<svg
 														fill="currentColor"
 														stroke-linecap="round"
@@ -267,7 +267,7 @@
 														></path>
 													</svg>
 												</a>
-												<a class="ml-4 text-gray-500">
+												<a href="#" class="ml-4 text-gray-500">
 													<svg
 														fill="none"
 														stroke="currentColor"
@@ -282,7 +282,7 @@
 														></path>
 													</svg>
 												</a>
-												<a class="ml-4 text-gray-500">
+												<a href="#" class="ml-4 text-gray-500">
 													<svg
 														fill="currentColor"
 														stroke-linecap="round"
