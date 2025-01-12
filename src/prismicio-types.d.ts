@@ -107,6 +107,7 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
 >;
 
 type PageDocumentDataSlicesSlice =
+	| SlideshowSlice
 	| LatestBlogsSlice
 	| PortfolioSlice
 	| FrequentQuestionsSlice
@@ -1580,6 +1581,83 @@ type ServicesSliceVariation = ServicesSliceDefault;
 export type ServicesSlice = prismic.SharedSlice<'services', ServicesSliceVariation>;
 
 /**
+ * Item in *Slideshow → Default → Primary → Slideshow*
+ */
+export interface SlideshowSliceDefaultPrimarySlideshowItem {
+	/**
+	 * Image field in *Slideshow → Default → Primary → Slideshow*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: slideshow.default.primary.slideshow[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Slideshow → Default → Primary*
+ */
+export interface SlideshowSliceDefaultPrimary {
+	/**
+	 * Title field in *Slideshow → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: slideshow.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Description field in *Slideshow → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: slideshow.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Slideshow field in *Slideshow → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: slideshow.default.primary.slideshow[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	slideshow: prismic.GroupField<Simplify<SlideshowSliceDefaultPrimarySlideshowItem>>;
+}
+
+/**
+ * Default variation for Slideshow Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideshowSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<SlideshowSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Slideshow*
+ */
+type SlideshowSliceVariation = SlideshowSliceDefault;
+
+/**
+ * Slideshow Shared Slice
+ *
+ * - **API ID**: `slideshow`
+ * - **Description**: Slideshow
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideshowSlice = prismic.SharedSlice<'slideshow', SlideshowSliceVariation>;
+
+/**
  * Item in *Testimonials → Default → Primary → Card*
  */
 export interface TestimonialsSliceDefaultPrimaryCardItem {
@@ -1975,6 +2053,11 @@ declare module '@prismicio/client' {
 			ServicesSliceDefaultPrimary,
 			ServicesSliceVariation,
 			ServicesSliceDefault,
+			SlideshowSlice,
+			SlideshowSliceDefaultPrimarySlideshowItem,
+			SlideshowSliceDefaultPrimary,
+			SlideshowSliceVariation,
+			SlideshowSliceDefault,
 			TestimonialsSlice,
 			TestimonialsSliceDefaultPrimaryCardItem,
 			TestimonialsSliceDefaultPrimary,

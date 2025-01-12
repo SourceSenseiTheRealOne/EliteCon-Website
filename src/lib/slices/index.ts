@@ -16,6 +16,7 @@ import ProductInfoRight from './ProductInfoRight/index.svelte';
 import Projects from './Projects/index.svelte';
 import Quote from './Quote/index.svelte';
 import Services from './Services/index.svelte';
+import Slideshow from './Slideshow/index.svelte';
 import Testimonials from './Testimonials/index.svelte';
 import Text from './Text/index.svelte';
 import TextWithImage from './TextWithImage/index.svelte';
@@ -37,6 +38,7 @@ export const components = {
 	projects: Projects,
 	quote: Quote,
 	services: Services,
+	slideshow: Slideshow,
 	testimonials: Testimonials,
 	text: Text,
 	text_with_image: TextWithImage

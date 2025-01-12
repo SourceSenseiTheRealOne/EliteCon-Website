@@ -35,6 +35,9 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"slideshow": {
+							"type": "SharedSlice"
+						},
 						"latest_blogs": {
 							"type": "SharedSlice"
 						},

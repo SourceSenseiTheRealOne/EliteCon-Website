@@ -1,0 +1,54 @@
+{
+  "id": "slideshow",
+  "type": "SharedSlice",
+  "name": "Slideshow",
+  "description": "Slideshow",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "slideshow": {
+          "type": "Group",
+          "config": {
+            "label": "Slideshow",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
