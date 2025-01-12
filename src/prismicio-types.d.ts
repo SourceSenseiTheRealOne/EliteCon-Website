@@ -1082,6 +1082,26 @@ export interface PortfolioSliceDefaultPrimaryCardItem {
 	description: prismic.RichTextField;
 
 	/**
+	 * Link field in *Portfolio → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.card[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * VideoLink field in *Portfolio → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.card[].videolink
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	videolink: prismic.RichTextField;
+
+	/**
 	 * Image field in *Portfolio → Default → Primary → Card*
 	 *
 	 * - **Field Type**: Image
@@ -1092,14 +1112,24 @@ export interface PortfolioSliceDefaultPrimaryCardItem {
 	image: prismic.ImageField<never>;
 
 	/**
-	 * Link field in *Portfolio → Default → Primary → Card*
+	 * Image2 field in *Portfolio → Default → Primary → Card*
 	 *
-	 * - **Field Type**: Link
+	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[].link
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 * - **API ID Path**: portfolio.default.primary.card[].image2
+	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	link: prismic.LinkField;
+	image2: prismic.ImageField<never>;
+
+	/**
+	 * Image3 field in *Portfolio → Default → Primary → Card*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.card[].image3
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image3: prismic.ImageField<never>;
 }
 
 /**

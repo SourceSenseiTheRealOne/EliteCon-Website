@@ -54,14 +54,6 @@
                   "multi": "paragraph,strong,em"
                 }
               },
-              "image": {
-                "type": "Image",
-                "config": {
-                  "label": "Image",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              },
               "link": {
                 "type": "Link",
                 "config": {
@@ -71,6 +63,39 @@
                   "allowTargetBlank": true,
                   "allowText": true,
                   "repeat": false
+                }
+              },
+              "videolink": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "VideoLink",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "image2": {
+                "type": "Image",
+                "config": {
+                  "label": "Image2",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "image3": {
+                "type": "Image",
+                "config": {
+                  "label": "Image3",
+                  "constraint": {},
+                  "thumbnails": []
                 }
               }
             }
