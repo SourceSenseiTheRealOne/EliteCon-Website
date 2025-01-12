@@ -30,7 +30,7 @@
 			</h3>
 
 			<p class="mb-6 text-white text-center  sm:text-lg md:mb-8">
-				<PrismicRichText field={item.content} />
+				<PrismicRichText field={item.description} />
 			</p>
 
 			<div class="relative mb-6 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:mb-8">

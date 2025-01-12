@@ -400,14 +400,14 @@ export interface BuildingStepsSliceDefaultPrimarySectionItem {
 	title: prismic.RichTextField;
 
 	/**
-	 * Content field in *BuildingSteps → Default → Primary → Section*
+	 * Description field in *BuildingSteps → Default → Primary → Section*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: building_steps.default.primary.section[].content
+	 * - **API ID Path**: building_steps.default.primary.section[].description
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	content: prismic.RichTextField;
+	description: prismic.RichTextField;
 
 	/**
 	 * Image field in *BuildingSteps → Default → Primary → Section*

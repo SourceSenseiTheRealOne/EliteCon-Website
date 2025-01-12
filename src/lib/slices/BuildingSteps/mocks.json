@@ -46,23 +46,8 @@
 								}
 							],
 							[
-								"content",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Id anim irure proident Lorem. Nisi qui sit commodo occaecat enim laboris. Pariatur aute proident labore excepteur et dolor eu incididunt quis commodo."
-											}
-										}
-									]
-								}
-							],
-							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
@@ -80,7 +65,24 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Deserunt nostrud pariatur sint voluptate aliqua eu duis exercitation culpa irure elit culpa. Ad eu duis proident amet commodo ea incididunt dolore deserunt sint do magna id do consectetur."
+											}
+										}
+									]
 								}
 							]
 						]

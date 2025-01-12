@@ -45,10 +45,10 @@
                   "multi": "heading3,strong,em"
                 }
               },
-              "content": {
+              "description": {
                 "type": "StructuredText",
                 "config": {
-                  "label": "Content",
+                  "label": "Description",
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "multi": "paragraph,strong,em"
