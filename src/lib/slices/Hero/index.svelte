@@ -52,6 +52,16 @@
 			<video class="absolute min-h-full min-w-full object-cover" src={videoLink} autoplay muted loop
 			></video>
 		</div>
+	{:else}
+		<div class="video-docker absolute left-0 top-0 h-full w-full overflow-hidden">
+			<video
+				class="absolute min-h-full min-w-full object-cover"
+				src="https://res.cloudinary.com/dzxalfzwh/video/upload/v1736717985/nbpn2cbr1js9m0eqjhpm.mp4"
+				autoplay
+				muted
+				loop
+			></video>
+		</div>
 	{/if}
 
 	<!-- Black overlay -->

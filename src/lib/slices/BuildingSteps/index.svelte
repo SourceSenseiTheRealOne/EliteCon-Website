@@ -17,25 +17,37 @@
 	class="bg-black text-white py-6 sm:py-8 lg:py-12"
 >
 	<div class="mx-auto max-w-screen-md px-4 md:px-8">
-		<PrismicRichText  {components} field={slice.primary.title} />
+		{#if slice.primary.title}
+			<PrismicRichText {components} field={slice.primary.title} />
+		{/if}
 
-		<p class="mb-6 text-white text-center sm:text-lg md:mb-8">
-			<PrismicRichText field={slice.primary.description} />
-		</p>
+		{#if slice.primary.description}
+			<p class="mb-6 text-white text-center sm:text-lg md:mb-8">
+				<PrismicRichText field={slice.primary.description} />
+			</p>
+		{/if}
 
 		{#each slice.primary.section as item}
-			<!-- Render content for item -->
-			<h3 class="mb-2 text-xl text-center  font-semibold text-white sm:text-2xl md:mb-4">
-				<PrismicRichText field={item.title} />
-			</h3>
+			{#if item}
+				<!-- Render content for item -->
+				{#if item.title}
+					<h3 class="mb-2 text-xl text-center font-semibold text-white sm:text-2xl md:mb-4">
+						<PrismicRichText field={item.title} />
+					</h3>
+				{/if}
 
-			<p class="mb-6 text-white text-center  sm:text-lg md:mb-8">
-				<PrismicRichText field={item.description} />
-			</p>
+				{#if item.description}
+					<p class="mb-6 text-white text-center sm:text-lg md:mb-8">
+						<PrismicRichText field={item.description} />
+					</p>
+				{/if}
 
-			<div class="relative mb-6 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:mb-8">
-				<PrismicImage class="h-full w-full object-cover object-center" field={item.image} />
-			</div>
+				{#if item.image}
+					<div class="relative mb-6 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:mb-8">
+						<PrismicImage class="h-full w-full object-cover object-center" field={item.image} />
+					</div>
+				{/if}
+			{/if}
 		{/each}
 	</div>
 </section>

@@ -74,13 +74,15 @@
 						>
 							<ul class="py-2">
 								{#each item.link as link, index}
-									{#if link.slug !== undefined}
-										<li>
-											<PrismicLink
-												class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
-												field={link}>{link.slug.replace(/-/g, ' ')}</PrismicLink
-											>
-										</li>
+									{#if link}
+										{#if link.slug}
+											<li>
+												<PrismicLink
+													class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
+													field={link}>{link.slug.replace(/-/g, ' ')}</PrismicLink
+												>
+											</li>
+										{/if}
 									{/if}
 								{/each}
 							</ul>
@@ -234,13 +236,13 @@
 											>
 										</div>
 										<div class="p-2 w-full pt-3 mt-4 border-t border-gray-200 text-center">
-											<a href="#" class="text-orange-300">example@email.com</a>
+											<a href="/" class="text-orange-300">example@email.com</a>
 											<p class="leading-normal my-2">
 												49 Smith St.
 												<br />Saint Cloud, MN 56301
 											</p>
 											<span class="inline-flex">
-												<a href="#" class="text-gray-500">
+												<a href="/" class="text-gray-500">
 													<svg
 														fill="currentColor"
 														stroke-linecap="round"
@@ -253,7 +255,7 @@
 														></path>
 													</svg>
 												</a>
-												<a href="#" class="ml-4 text-gray-500">
+												<a href="/" class="ml-4 text-gray-500">
 													<svg
 														fill="currentColor"
 														stroke-linecap="round"
@@ -267,7 +269,7 @@
 														></path>
 													</svg>
 												</a>
-												<a href="#" class="ml-4 text-gray-500">
+												<a href="/" class="ml-4 text-gray-500">
 													<svg
 														fill="none"
 														stroke="currentColor"
@@ -282,7 +284,7 @@
 														></path>
 													</svg>
 												</a>
-												<a href="#" class="ml-4 text-gray-500">
+												<a href="/" class="ml-4 text-gray-500">
 													<svg
 														fill="currentColor"
 														stroke-linecap="round"
