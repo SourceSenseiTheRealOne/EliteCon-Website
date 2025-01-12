@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isFilled, type Content } from '@prismicio/client';
+	import { asText, isFilled, type Content } from '@prismicio/client';
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
 
 	import Bounded from '$lib/components/Bounded.svelte';
@@ -14,6 +14,16 @@
 
 	$: if (slice.primary.backgroundImage) {
 		isBgImageFound = Object.keys(slice.primary.backgroundImage).length > 0;
+	}
+
+	// Extract video link as a string (handles RichTextField case)
+	let videoLink: string | null = null;
+	$: {
+		if (slice.primary.videolink) {
+			videoLink = Array.isArray(slice.primary.videolink)
+				? asText(slice.primary.videolink)
+				: slice.primary.videolink;
+		}
 	}
 
 	// console.log(slice.primary.backgroundImage, 'slice.primary.backgroundImage');
@@ -37,15 +47,9 @@
 				field={slice.primary.backgroundImage}
 			/>
 		</div>
-	{:else}
+	{:else if videoLink}
 		<div class="video-docker absolute left-0 top-0 h-full w-full overflow-hidden">
-			<video
-				class="absolute min-h-full min-w-full object-cover"
-				src="https://cdn.pixabay.com/video/2024/05/08/211152_large.mp4"
-				type="video/mp4"
-				autoplay
-				muted
-				loop
+			<video class="absolute min-h-full min-w-full object-cover" src={videoLink} autoplay muted loop
 			></video>
 		</div>
 	{/if}

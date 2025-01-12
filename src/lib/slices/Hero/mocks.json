@@ -47,6 +47,17 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"videolink": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis veniam voluptate exercitation laboris duis est voluptate. Veniam fugiat amet dolor cupidatat sunt aliquip duis quis aliqua eiusmod nulla duis sunt officia."
+						}
+					}
+				]
 			}
 		},
 		"items": [

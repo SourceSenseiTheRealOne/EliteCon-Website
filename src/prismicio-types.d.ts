@@ -691,6 +691,16 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	backgroundImage: prismic.ImageField<never>;
+
+	/**
+	 * VideoLink field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.videolink
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	videolink: prismic.RichTextField;
 }
 
 /**

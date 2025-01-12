@@ -4,11 +4,16 @@
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
 
 	import CustomHeading from '$lib/components/ui/CustomHeading.svelte';
+	import Heading from './Heading.svelte';
 
 	export let slice: Content.ServicesSlice;
 
 	const components: PrismicRichText['components'] = {
 		heading2: CustomHeading
+	};
+
+	const servicesTitleHover: PrismicRichText['components'] = {
+		heading2: Heading
 	};
 
 	$: if (slice.primary.card) console.log(slice.primary.card, 'slice.primary.card ');
@@ -28,7 +33,7 @@
 		>
 			{#each slice.primary.card as item}
 				<div class="p-1 flex justify-center">
-					<div class="lg:w-100 lg:h-100 custom__size__boxes relative">
+					<div class="lg:w-100 lg:h-100 custom__size__boxes relative group">
 						{#if item.image && Object.keys(item.image).length > 0}
 							<PrismicImage
 								class="absolute inset-0 w-full h-full object-cover object-center"
@@ -42,13 +47,14 @@
 							/>
 						{/if}
 						<div
-							class="px-4 py-6 relative z-10 w-full h-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex items-center justify-center"
-						>
+							class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity"
+						></div>
+						<div class="px-4 py-6 relative z-10 w-full h-full flex items-center justify-center">
 							<PrismicLink field={item.service_page_link}>
 								<h3
-									class="title-font text-6xl font-medium text-black underline cursor-pointer mb-3 uppercase"
+									class="title-font font-medium text-white group-hover:text-orange-300 cursor-pointer mb-3 uppercase transition-colors"
 								>
-									<PrismicRichText field={item.title} />
+									<PrismicRichText components={servicesTitleHover} field={item.title} />
 								</h3>
 							</PrismicLink>
 						</div>

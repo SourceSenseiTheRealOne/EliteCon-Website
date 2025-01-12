@@ -16,8 +16,8 @@
 	data-slice-variation={slice.variation}
 	class="bg-black text-white py-6 sm:py-8 lg:py-12"
 >
-	<div class="mx-auto max-w-screen-md px-4 md:px-8">
-		<PrismicRichText {components} field={slice.primary.title} />
+	<div class="mx-auto max-w-screen-md px-4 md:px-8 text-center" >
+		<PrismicRichText  {components} field={slice.primary.title} />
 
 		<p class="mb-6 text-white text-center sm:text-lg md:mb-8">
 			<PrismicRichText field={slice.primary.description} />

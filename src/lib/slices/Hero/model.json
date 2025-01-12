@@ -34,6 +34,15 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "videolink": {
+          "type": "StructuredText",
+          "config": {
+            "label": "VideoLink",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
         }
       },
       "items": {},
