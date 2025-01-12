@@ -78,7 +78,7 @@
 										<li>
 											<PrismicLink
 												class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
-												field={link}>{link.slug}</PrismicLink
+												field={link}>{link.slug.replace(/-/g, ' ')}</PrismicLink
 											>
 										</li>
 									{/if}
@@ -136,7 +136,7 @@
 			<nav class="flex space-x-3 mt-4 justify-center">
 				<!-- Added flex and space-x-4 -->
 				{#each navigation.data?.mobilenavigation as item}
-					<div class="relative text-center items-center flex  group">
+					<div class="relative text-center items-center flex group">
 						<ul>
 							<li
 								class="text-md font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
