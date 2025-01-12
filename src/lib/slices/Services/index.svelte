@@ -16,7 +16,7 @@
 		heading2: Heading
 	};
 
-	$: if (slice.primary.card) console.log(slice.primary.card, 'slice.primary.card ');
+	// $: if (slice.primary.card) console.log(slice.primary.card, 'slice.primary.card ');
 </script>
 
 <section
