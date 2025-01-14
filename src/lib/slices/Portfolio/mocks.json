@@ -3,28 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Discussion"
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Culpa eiusmod ullamco quis aliqua eu ex veniam. Nostrud quis enim commodo."
-						}
-					}
-				]
-			},
 			"card": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -37,9 +15,9 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading3",
+											"type": "paragraph",
 											"content": {
-												"text": "Yellow"
+												"text": "In nisi consequat voluptate ut officia tempor sunt. Excepteur aliquip nisi commodo aliqua nisi minim Lorem esse sunt laboris fugiat adipisicing pariatur officia laboris."
 											}
 										}
 									]

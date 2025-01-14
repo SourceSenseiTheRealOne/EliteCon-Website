@@ -42,7 +42,7 @@
                   "label": "Title",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "heading3,strong,em"
+                  "single": "heading2"
                 }
               },
               "description": {

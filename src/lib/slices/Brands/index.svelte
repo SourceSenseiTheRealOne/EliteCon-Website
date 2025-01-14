@@ -18,19 +18,19 @@
 	class=" py-4 lg:px-24 lg:py-8 flex items-center mb-4"
 >
 	<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-		<div class="mb-4 flex flex-col items-center gap-6 md:mb-8 lg:flex-row lg:justify-between">
+		<div class="mb-4 flex flex-col items-center gap-6 md:mb-8 lg:flex-row lg:justify-between mt-2">
 			<!-- <h2 class="mb-2 text-center sm:text-3xl text-7xl font-medium title-font text-orange-500">
 				Trusted by the best
 			</h2> -->
 
 			<PrismicRichText {components} field={slice.primary.title} />
 
-			<p class="max-w-sm text-center text-gray-400 lg:text-right">
+			<!-- <p class="max-w-sm text-center text-gray-400 lg:text-right">
 				<PrismicRichText field={slice.primary.description} />
-			</p>
+			</p> -->
 		</div>
 
-		<div class="grid grid-cols-2 gap-4 rounded-lg md:grid-cols-3 lg:gap-6">
+		<div class="grid grid-cols-2 gap-4 rounded-lg md:grid-cols-3 lg:gap-6 my-8">
 			<!-- logo - start -->
 			{#each slice.primary.card as item}
 				<!-- Render content for item -->

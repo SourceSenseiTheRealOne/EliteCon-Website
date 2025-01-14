@@ -1137,26 +1137,6 @@ export interface PortfolioSliceDefaultPrimaryCardItem {
  */
 export interface PortfolioSliceDefaultPrimary {
 	/**
-	 * Title field in *Portfolio → Default → Primary*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.title
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	title: prismic.RichTextField;
-
-	/**
-	 * Description field in *Portfolio → Default → Primary*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.description
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	description: prismic.RichTextField;
-
-	/**
 	 * Card field in *Portfolio → Default → Primary*
 	 *
 	 * - **Field Type**: Group
@@ -1351,12 +1331,12 @@ export interface ProjectsSliceDefaultPrimaryCardItem {
 	/**
 	 * Title field in *Projects → Default → Primary → Card*
 	 *
-	 * - **Field Type**: Rich Text
+	 * - **Field Type**: Title
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: projects.default.primary.card[].title
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	title: prismic.TitleField;
 
 	/**
 	 * Description field in *Projects → Default → Primary → Card*
@@ -1510,12 +1490,12 @@ export interface ServicesSliceDefaultPrimaryCardItem {
 	/**
 	 * Title field in *Services → Default → Primary → Card*
 	 *
-	 * - **Field Type**: Rich Text
+	 * - **Field Type**: Title
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: services.default.primary.card[].title
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	title: prismic.TitleField;
 
 	/**
 	 * Description field in *Services → Default → Primary → Card*

@@ -17,7 +17,7 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="text-white py-4 lg:px-24 lg:py-8 flex items-center mb-4"
+	class="text-white py-4 lg:px-24 lg:py-8 flex items-center mb-12"
 >
 	<div class="mx-auto">
 		<div class="flex flex-col items-center text-center w-full">
@@ -44,13 +44,22 @@
 						<div
 							class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity"
 						></div>
-						<div class="px-4 py-6 relative z-10 w-full h-full flex items-center justify-center">
+						<!-- <div class="px-4 py-6 relative z-10 w-full h-full flex items-center justify-center">
 							<PrismicLink field={item.project_page_link}>
 								<h3
 									class="title-font font-medium text-white group-hover:text-orange-300 cursor-pointer mb-3 uppercase transition-colors"
 								>
 									<PrismicRichText field={item.title} />
 								</h3>
+							</PrismicLink>
+						</div> -->
+						<div class="px-4 py-6 relative z-10 w-full h-full flex items-center justify-center">
+							<PrismicLink field={item.project_page_link}>
+								<div
+									class="text-white text-center group-hover:text-orange-300 cursor-pointer mb-3 uppercase transition-colors px-20"
+								>
+									<PrismicRichText field={item.title} />
+								</div>
 							</PrismicLink>
 						</div>
 					</div>

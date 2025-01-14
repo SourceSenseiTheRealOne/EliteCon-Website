@@ -37,9 +37,9 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading3",
+											"type": "heading2",
 											"content": {
-												"text": "Negative"
+												"text": "Complex"
 											}
 										}
 									]
@@ -88,8 +88,8 @@
 							[
 								"project_page_link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "5a9ca080-2ba6-4b81-8d73-9e8d2eb7e0b3",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://google.com",

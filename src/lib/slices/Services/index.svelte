@@ -51,11 +51,11 @@
 						></div>
 						<div class="px-4 py-6 relative z-10 w-full h-full flex items-center justify-center">
 							<PrismicLink field={item.service_page_link}>
-								<h3
-									class="title-font font-medium text-white group-hover:text-orange-300 cursor-pointer mb-3 uppercase transition-colors"
+								<div
+									class="text-white text-center group-hover:text-orange-300 cursor-pointer mb-3 uppercase transition-colors px-20"
 								>
 									<PrismicRichText components={servicesTitleHover} field={item.title} />
-								</h3>
+								</div>
 							</PrismicLink>
 						</div>
 					</div>

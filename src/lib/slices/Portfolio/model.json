@@ -12,24 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "strong,em,heading2,heading3"
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
-          }
-        },
         "card": {
           "type": "Group",
           "config": {
@@ -42,7 +24,7 @@
                   "label": "Title",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "heading3,strong,em"
+                  "multi": "heading3,strong,em,heading2,paragraph,heading4"
                 }
               },
               "description": {

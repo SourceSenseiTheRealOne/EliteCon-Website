@@ -107,7 +107,7 @@
 				To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
 			-->
 				<div
-					class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+					class="relative transform overflow-hidden rounded-lg bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-slate-100 to-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
 				>
 					<div class="flex justify-end p-2">
 						<button
@@ -176,13 +176,13 @@
 										</div>
 										<div class="p-2 w-full">
 											<button
-												class="flex mx-auto text-white bg-orange-400 border-0 py-2 px-8 focus:outline-none hover:bg-orange-500 rounded-xl text-lg"
+												class="flex mx-auto text-white bg-gradient-to-r shadow-lg from-[#fda58a] to-[#f59e0b] border-0 py-1.5 px-6 focus:outline-none hover:bg-orange-500 rounded-2xl text-lg"
 												>Submit</button
 											>
 										</div>
 										<div class="p-2 w-full pt-3 mt-4 border-t border-gray-200 text-center">
 											<a class="text-orange-300">example@email.com</a>
-											<p class="leading-normal my-2">
+											<!-- <p class="leading-normal my-2">
 												49 Smith St.
 												<br />Saint Cloud, MN 56301
 											</p>
@@ -243,7 +243,7 @@
 														></path>
 													</svg>
 												</a>
-											</span>
+											</span> -->
 										</div>
 									</div>
 								</div>
