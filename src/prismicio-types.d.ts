@@ -1133,9 +1133,44 @@ export interface PortfolioSliceDefaultPrimaryCardItem {
 }
 
 /**
+ * Item in *Portfolio → Default → Primary → ImgGallery*
+ */
+export interface PortfolioSliceDefaultPrimaryImggalleryItem {
+	/**
+	 * Image field in *Portfolio → Default → Primary → ImgGallery*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.imggallery[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *Portfolio → Default → Primary*
  */
 export interface PortfolioSliceDefaultPrimary {
+	/**
+	 * Title field in *Portfolio → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * VideoLink field in *Portfolio → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.videolink
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	videolink: prismic.RichTextField;
+
 	/**
 	 * Card field in *Portfolio → Default → Primary*
 	 *
@@ -1145,6 +1180,16 @@ export interface PortfolioSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	card: prismic.GroupField<Simplify<PortfolioSliceDefaultPrimaryCardItem>>;
+
+	/**
+	 * ImgGallery field in *Portfolio → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.imggallery[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	imggallery: prismic.GroupField<Simplify<PortfolioSliceDefaultPrimaryImggalleryItem>>;
 }
 
 /**
@@ -2038,6 +2083,7 @@ declare module '@prismicio/client' {
 			LatestBlogsSliceDefault,
 			PortfolioSlice,
 			PortfolioSliceDefaultPrimaryCardItem,
+			PortfolioSliceDefaultPrimaryImggalleryItem,
 			PortfolioSliceDefaultPrimary,
 			PortfolioSliceVariation,
 			PortfolioSliceDefault,

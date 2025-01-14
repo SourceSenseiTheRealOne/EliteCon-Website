@@ -65,58 +65,37 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="py-6 sm:py-8 lg:py-12 mb-8"
+	class="py-6 sm:py-8 lg:py-12 mb-8 items-center"
 >
-	<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-		<!-- Iterate over each section -->
-		{#each slice.primary.card as item}
-			<!-- Section Title -->
-			<div class="mb-12 text-center">
-				<PrismicRichText {components} field={item.title} />
-			</div>
+<h2 class="text-center">
 
-			<!-- Video Section -->
-			{#if item.videolink}
-				<div class="mb-6">
-					<video
-						class="w-full h-auto object-cover rounded-lg shadow-lg"
-						src={Array.isArray(item.videolink) ? asText(item.videolink) : item.videolink}
-						autoplay
-						muted
-						loop
-						on:click={() => openGallery(item)}
-					></video>
-				</div>
-			{/if}
+	<PrismicRichText {components} field={slice.primary.title} />
+</h2>
 
-			<!-- Images Section -->
-			<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-				<!-- Image 1 -->
-				<div on:click={() => openGallery(item)}>
-					<PrismicImage
-						class="w-full h-auto object-cover rounded-lg shadow-lg"
-						field={item.image}
-					/>
-				</div>
+	{#if slice.primary.videolink}
+		<!-- Centered Video -->
+		<div class="flex justify-center items-center mb-6 mx-auto max-w-6xl px-4">
+			<video
+				class="w-full h-auto object-cover rounded-lg shadow-lg"
+				src={Array.isArray(slice.primary.videolink)
+					? asText(slice.primary.videolink)
+					: slice.primary.videolink}
+				autoplay
+				muted
+				loop
+				controls
+			></video>
+		</div>
+	{/if}
 
-				<!-- Image 2 -->
-				<div on:click={() => openGallery(item)}>
-					<PrismicImage
-						class="w-full h-auto object-cover rounded-lg shadow-lg"
-						field={item.image2}
-					/>
-				</div>
-
-				<!-- Image 3 -->
-				<div on:click={() => openGallery(item)}>
-					<PrismicImage
-						class="w-full h-auto object-cover rounded-lg shadow-lg"
-						field={item.image3}
-					/>
-				</div>
-			</div>
-		{/each}
-	</div>
+	{#if slice.primary.imggallery && slice.primary.imggallery.length > 0}
+		<!-- Images Grid -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-6xl px-4">
+			{#each slice.primary.imggallery as item}
+				<PrismicImage class="w-full h-auto object-cover rounded-lg shadow-lg" field={item.image} />
+			{/each}
+		</div>
+	{/if}
 </section>
 
 {#if showGalleryModal && selectedImages.length > 0}
