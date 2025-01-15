@@ -3,148 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"card": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"title",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "In nisi consequat voluptate ut officia tempor sunt. Excepteur aliquip nisi commodo aliqua nisi minim Lorem esse sunt laboris fugiat adipisicing pariatur officia laboris."
-											}
-										}
-									]
-								}
-							],
-							[
-								"description",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Anim proident officia consectetur amet ex cillum enim fugiat. Proident veniam culpa in magna labore ipsum ea ipsum laborum nostrud sunt eu consectetur elit."
-											}
-										}
-									]
-								}
-							],
-							[
-								"image",
-								{
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-										"width": 8640,
-										"height": 8640
-									},
-									"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-									"width": 8640,
-									"height": 8640,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							],
-							[
-								"link",
-								{
-									"key": "7880fc57-6679-40de-9e11-da6c66066c72",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "http://twitter.com",
-										"text": "air"
-									}
-								}
-							],
-							[
-								"videolink",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Cupidatat cillum elit excepteur excepteur officia nulla cupidatat duis eiusmod dolore laboris dolore nisi nulla. Cillum elit voluptate ipsum."
-											}
-										}
-									]
-								}
-							],
-							[
-								"image2",
-								{
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-										"width": 3935,
-										"height": 5894
-									},
-									"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-									"width": 3935,
-									"height": 5894,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							],
-							[
-								"image3",
-								{
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
-										"width": 12288,
-										"height": 16384
-									},
-									"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
-									"width": 12288,
-									"height": 16384,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							]
-						]
-					}
-				]
-			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -176,7 +34,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
@@ -194,6 +51,9 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							]

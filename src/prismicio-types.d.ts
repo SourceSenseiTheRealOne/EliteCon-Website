@@ -1058,81 +1058,6 @@ type LatestBlogsSliceVariation = LatestBlogsSliceDefault;
 export type LatestBlogsSlice = prismic.SharedSlice<'latest_blogs', LatestBlogsSliceVariation>;
 
 /**
- * Item in *Portfolio → Default → Primary → Card*
- */
-export interface PortfolioSliceDefaultPrimaryCardItem {
-	/**
-	 * Title field in *Portfolio → Default → Primary → Card*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[].title
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	title: prismic.RichTextField;
-
-	/**
-	 * Description field in *Portfolio → Default → Primary → Card*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[].description
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	description: prismic.RichTextField;
-
-	/**
-	 * Link field in *Portfolio → Default → Primary → Card*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[].link
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	link: prismic.LinkField;
-
-	/**
-	 * VideoLink field in *Portfolio → Default → Primary → Card*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[].videolink
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	videolink: prismic.RichTextField;
-
-	/**
-	 * Image field in *Portfolio → Default → Primary → Card*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[].image
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image: prismic.ImageField<never>;
-
-	/**
-	 * Image2 field in *Portfolio → Default → Primary → Card*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[].image2
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image2: prismic.ImageField<never>;
-
-	/**
-	 * Image3 field in *Portfolio → Default → Primary → Card*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[].image3
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image3: prismic.ImageField<never>;
-}
-
-/**
  * Item in *Portfolio → Default → Primary → ImgGallery*
  */
 export interface PortfolioSliceDefaultPrimaryImggalleryItem {
@@ -1170,16 +1095,6 @@ export interface PortfolioSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	videolink: prismic.RichTextField;
-
-	/**
-	 * Card field in *Portfolio → Default → Primary*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: portfolio.default.primary.card[]
-	 * - **Documentation**: https://prismic.io/docs/field#group
-	 */
-	card: prismic.GroupField<Simplify<PortfolioSliceDefaultPrimaryCardItem>>;
 
 	/**
 	 * ImgGallery field in *Portfolio → Default → Primary*
@@ -2082,7 +1997,6 @@ declare module '@prismicio/client' {
 			LatestBlogsSliceVariation,
 			LatestBlogsSliceDefault,
 			PortfolioSlice,
-			PortfolioSliceDefaultPrimaryCardItem,
 			PortfolioSliceDefaultPrimaryImggalleryItem,
 			PortfolioSliceDefaultPrimary,
 			PortfolioSliceVariation,
