@@ -67,10 +67,7 @@
 	data-slice-variation={slice.variation}
 	class="py-6 sm:py-8 lg:py-12 mb-8 items-center"
 >
-<h2 class="text-center">
-
 	<PrismicRichText {components} field={slice.primary.title} />
-</h2>
 
 	{#if slice.primary.videolink}
 		<!-- Centered Video -->
@@ -92,17 +89,15 @@
 		<!-- Images Grid -->
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-6xl px-4">
 			{#each slice.primary.imggallery as item}
-				<PrismicImage class="w-full h-auto object-cover rounded-lg shadow-lg" field={item.image} />
+				<PrismicImage class="w-full h-[300px] object-cover rounded-lg shadow-lg " field={item.image} />
 			{/each}
 		</div>
 	{/if}
 </section>
 
-{#if showGalleryModal && selectedImages.length > 0}
-	<!-- Modal with Dark Backdrop -->
+<!-- {#if showGalleryModal && selectedImages.length > 0}
 	<div class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
 		<div class="relative w-full max-w-4xl bg-white rounded-lg p-6">
-			<!-- Close Button -->
 			<button
 				class="absolute top-2 right-2 text-white bg-gray-800 rounded-full p-2"
 				on:click={closeGalleryModal}
@@ -113,7 +108,6 @@
 			<div class="w-full relative">
 				<div class="swiper default-carousel">
 					<div class="swiper-wrapper">
-						<!-- Show video if available -->
 						{#if selectedVideo}
 							<div class="swiper-slide">
 								<div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
@@ -128,7 +122,6 @@
 							</div>
 						{/if}
 
-						<!-- Show selected images -->
 						{#each selectedImages as image}
 							<div class="swiper-slide">
 								<div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
@@ -144,7 +137,7 @@
 			</div>
 		</div>
 	</div>
-{/if}
+{/if} -->
 
 <style>
 	.swiper-wrapper {
