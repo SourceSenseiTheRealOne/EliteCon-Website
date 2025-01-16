@@ -54,7 +54,7 @@
 								<div
 									class="text-white text-center group-hover:text-orange-300 cursor-pointer mb-3 uppercase transition-colors px-20"
 								>
-									<PrismicRichText components={servicesTitleHover} field={item.title} />
+									<PrismicRichText  field={item.title} />
 								</div>
 							</PrismicLink>
 						</div>

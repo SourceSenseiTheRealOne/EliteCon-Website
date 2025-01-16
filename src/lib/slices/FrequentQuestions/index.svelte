@@ -20,7 +20,7 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="py-6 sm:py-8 lg:py-12"
+	class="py-6 sm:py-8 lg:py-12 bg-slate-100"
 >
 	<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 		<!-- text - start -->
