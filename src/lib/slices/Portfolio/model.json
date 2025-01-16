@@ -30,6 +30,14 @@
             "single": "paragraph"
           }
         },
+        "mainimage": {
+          "type": "Image",
+          "config": {
+            "label": "MainImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "imggallery": {
           "type": "Group",
           "config": {

@@ -40,6 +40,8 @@
 		showGalleryModal = false;
 	}
 
+	$: if(slice.primary) console.log(slice.primary, "slice.primary.videolink")
+
 	onMount(() => {
 		// Initialize Swiper instance
 		swiperInstance = new Swiper('.default-carousel', {
@@ -69,7 +71,7 @@
 >
 	<PrismicRichText {components} field={slice.primary.title} />
 
-	{#if slice.primary.videolink}
+	{#if slice.primary.videolink && slice.primary.videolink.length > 0}
 		<!-- Centered Video -->
 		<div class="flex justify-center items-center mb-6 mx-auto max-w-6xl px-4">
 			<video
@@ -83,13 +85,23 @@
 				controls
 			></video>
 		</div>
+	{:else if slice.primary.mainimage}
+		<div class="flex justify-center items-center mb-6 mx-auto max-w-6xl px-4">
+			<PrismicImage
+				class="w-full h-auto object-cover rounded-lg shadow-lg"
+				field={slice.primary.mainimage}
+			/>
+		</div>
 	{/if}
 
 	{#if slice.primary.imggallery && slice.primary.imggallery.length > 0}
 		<!-- Images Grid -->
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-6xl px-4">
 			{#each slice.primary.imggallery as item}
-				<PrismicImage class="w-full h-[300px] object-cover rounded-lg shadow-lg " field={item.image} />
+				<PrismicImage
+					class="w-full h-[300px] object-cover rounded-lg shadow-lg "
+					field={item.image}
+				/>
 			{/each}
 		</div>
 	{/if}

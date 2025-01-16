@@ -1097,6 +1097,16 @@ export interface PortfolioSliceDefaultPrimary {
 	videolink: prismic.RichTextField;
 
 	/**
+	 * MainImage field in *Portfolio → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.default.primary.mainimage
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	mainimage: prismic.ImageField<never>;
+
+	/**
 	 * ImgGallery field in *Portfolio → Default → Primary*
 	 *
 	 * - **Field Type**: Group
