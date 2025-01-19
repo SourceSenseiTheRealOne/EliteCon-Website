@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { asText, type Content } from '@prismicio/client';
 	import { PrismicImage, PrismicLink, PrismicRichText } from '@prismicio/svelte';
+	import { tick } from 'svelte';
 
 	import Heading from './Heading.svelte';
 
@@ -24,23 +25,58 @@
 	let selectedVideo = null;
 
 	let swiperInstance;
+	let swiper;
 
 	// Function to open the gallery modal with relevant video and images
-	function openGallery(item) {
-		selectedVideo = item.videolink
-			? Array.isArray(item.videolink)
-				? asText(item.videolink)
-				: item.videolink
-			: null;
-		selectedImages = [item.image, item.image2, item.image3].filter(Boolean); // Filter out null or undefined images
-		showGalleryModal = true;
-	}
+	// function toggleGallery(e) {
+	// selectedVideo = item.videolink
+	// 	? Array.isArray(item.videolink)
+	// 		? asText(item.videolink)
+	// 		: item.videolink
+	// 	: null;
+	// selectedImages = [item.image, item.image2, item.image3].filter(Boolean);
+	// 	showGalleryModal = !showGalleryModal;
+	// }
 
+	function toggleGallery(e) {
+		showGalleryModal = !showGalleryModal;
+
+		if (showGalleryModal) {
+			// Wait for the DOM to update
+			tick().then(() => {
+				swiper = new Swiper('.mySwiper', {
+					modules: [Navigation, Pagination],
+					navigation: true,
+					spaceBetween: 10,
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true
+					}
+				});
+
+				// Initialize the thumbnail Swiper
+				new Swiper('.mySwiper2', {
+					modules: [Navigation, Pagination],
+					spaceBetween: 10,
+					slidesPerView: 4,
+					freeMode: true,
+					watchSlidesProgress: true
+				});
+			});
+		}
+
+	}
 	function closeGalleryModal() {
+		if (swiper) {
+			swiper.destroy();
+			swiper = null;
+		}
 		showGalleryModal = false;
 	}
 
-	$: if(slice.primary) console.log(slice.primary, "slice.primary.videolink")
+	$: console.log('showGalleryModal:', showGalleryModal);
+
+	$: if (slice.primary) console.log(slice.primary, 'slice.primary.videolink');
 
 	onMount(() => {
 		// Initialize Swiper instance
@@ -62,6 +98,7 @@
 <svelte:head>
 	<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </svelte:head>
 
 <section
@@ -86,9 +123,12 @@
 			></video>
 		</div>
 	{:else if slice.primary.mainimage}
-		<div class="flex justify-center items-center mb-6 mx-auto max-w-6xl px-4">
+		<div
+			class="flex justify-center items-center mb-6 mx-auto max-w-6xl px-4"
+			on:click={(e) => toggleGallery(e)}
+		>
 			<PrismicImage
-				class="w-full h-auto object-cover rounded-lg shadow-lg"
+				class="w-full h-auto object-cover rounded-lg shadow-lg cursor-pointer"
 				field={slice.primary.mainimage}
 			/>
 		</div>
@@ -96,10 +136,13 @@
 
 	{#if slice.primary.imggallery && slice.primary.imggallery.length > 0}
 		<!-- Images Grid -->
-		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-6xl px-4">
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-6xl px-4"
+			on:click={(e) => toggleGallery(e)}
+		>
 			{#each slice.primary.imggallery as item}
 				<PrismicImage
-					class="w-full h-[300px] object-cover rounded-lg shadow-lg "
+					class="w-full h-[300px] object-cover rounded-lg shadow-lg cursor-pointer"
 					field={item.image}
 				/>
 			{/each}
@@ -107,52 +150,149 @@
 	{/if}
 </section>
 
-<!-- {#if showGalleryModal && selectedImages.length > 0}
+{#if showGalleryModal}
 	<div class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-		<div class="relative w-full max-w-4xl bg-white rounded-lg p-6">
-			<button
-				class="absolute top-2 right-2 text-white bg-gray-800 rounded-full p-2"
+		<div class="relative w-full max-w-4xl bg-slate-200 bg-opacity-76 rounded-lg p-10">
+			<!-- <button
+				class="absolute top-2 right-2 text-white bg-yellow-600 rounded-full px-2.5 py-0.5 text-lg text-center font-bold"
 				on:click={closeGalleryModal}
 			>
 				&times;
+			</button> -->
+
+			<button
+				class=" absolute top-2 right-2 rounded-full group flex items-center justify-center focus-within:outline-red-500"
+				on:click={closeGalleryModal}
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+					><g fill="none"
+						><path
+							fill="url(#fluentColorDismissCircle240)"
+							d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2"
+						/><path
+							fill="url(#fluentColorDismissCircle241)"
+							d="m15.53 8.47l-.084-.073a.75.75 0 0 0-.882-.007l-.094.08L12 10.939l-2.47-2.47l-.084-.072a.75.75 0 0 0-.882-.007l-.094.08l-.073.084a.75.75 0 0 0-.007.882l.08.094L10.939 12l-2.47 2.47l-.072.084a.75.75 0 0 0-.007.882l.08.094l.084.073a.75.75 0 0 0 .882.007l.094-.08L12 13.061l2.47 2.47l.084.072a.75.75 0 0 0 .882.007l.094-.08l.073-.084a.75.75 0 0 0 .007-.882l-.08-.094L13.061 12l2.47-2.47l.072-.084a.75.75 0 0 0 .007-.882z"
+						/><defs
+							><linearGradient
+								id="fluentColorDismissCircle240"
+								x1="5.125"
+								x2="18.25"
+								y1="3.25"
+								y2="22.625"
+								gradientUnits="userSpaceOnUse"
+								><stop stop-color="#F83F54" /><stop
+									offset="1"
+									stop-color="#CA2134"
+								/></linearGradient
+							><linearGradient
+								id="fluentColorDismissCircle241"
+								x1="8.685"
+								x2="12.591"
+								y1="12.332"
+								y2="16.392"
+								gradientUnits="userSpaceOnUse"
+								><stop stop-color="#FDFDFD" /><stop
+									offset="1"
+									stop-color="#FECBE6"
+								/></linearGradient
+							></defs
+						></g
+					></svg
+				>
 			</button>
 
 			<div class="w-full relative">
 				<div class="swiper default-carousel">
 					<div class="swiper-wrapper">
-						{#if selectedVideo}
-							<div class="swiper-slide">
-								<div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
-									<video
-										src={selectedVideo}
-										autoplay
-										muted
-										loop
-										class="w-full h-auto object-cover rounded-lg shadow-lg"
-									></video>
-								</div>
-							</div>
-						{/if}
+						<swiper-container
+							style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+							class="mySwiper"
+							thumbs-swiper=".mySwiper2"
+							space-between="10"
+							navigation="true"
+						>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+							</swiper-slide>
+						</swiper-container>
 
-						{#each selectedImages as image}
-							<div class="swiper-slide">
-								<div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
-									<PrismicImage field={image} />
-								</div>
-							</div>
-						{/each}
+						<swiper-container
+							class="mySwiper2"
+							space-between="10"
+							slides-per-view="4"
+							free-mode="true"
+							watch-slides-progress="true"
+						>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+							</swiper-slide>
+							<swiper-slide>
+								<img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+							</swiper-slide>
+						</swiper-container>
 					</div>
-					<div class="swiper-pagination"></div>
+					<!-- <div class="swiper-pagination"></div>
 					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
+					<div class="swiper-button-next"></div> -->
 				</div>
 			</div>
 		</div>
 	</div>
-{/if} -->
+{/if}
 
 <style>
-	.swiper-wrapper {
+	/* .swiper-wrapper {
 		width: 100%;
 		height: max-content !important;
 		padding-bottom: 64px !important;
@@ -160,7 +300,68 @@
 		transition-timing-function: linear !important;
 		position: relative;
 	}
-	.swiper-pagination-bullet {
+	.swiper-pagination-bullet { 
 		background: #4f46e5;
+	} */
+
+	swiper-container {
+		width: 100%;
+		height: 100%;
+	}
+
+	swiper-slide {
+		text-align: center;
+		font-size: 18px;
+		background: transparent;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	swiper-slide img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	swiper-container {
+		width: 100%;
+		height: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	swiper-slide {
+		background-size: cover;
+		background-position: center;
+	}
+
+	.mySwiper {
+		height: 80%;
+		width: 100%;
+	}
+
+	.mySwiper2 {
+		height: 20%;
+		box-sizing: border-box;
+		padding: 10px 0;
+	}
+
+	.mySwiper2 swiper-slide {
+		width: 25%;
+		height: 100%;
+		opacity: 0.4;
+	}
+
+	.mySwiper2 .swiper-slide-thumb-active {
+		opacity: 1;
+	}
+
+	swiper-slide img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 </style>
