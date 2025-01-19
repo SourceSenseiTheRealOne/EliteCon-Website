@@ -64,7 +64,6 @@
 				});
 			});
 		}
-
 	}
 	function closeGalleryModal() {
 		if (swiper) {
@@ -152,7 +151,9 @@
 
 {#if showGalleryModal}
 	<div class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-		<div class="relative w-full max-w-4xl bg-slate-200 bg-opacity-76 rounded-lg p-10">
+		<div
+			class="relative w-[800px] h-auto max-w-4xl bg-slate-100 bg-opacity-65 rounded-lg px-8 py-16"
+		>
 			<!-- <button
 				class="absolute top-2 right-2 text-white bg-yellow-600 rounded-full px-2.5 py-0.5 text-lg text-center font-bold"
 				on:click={closeGalleryModal}
@@ -164,40 +165,12 @@
 				class=" absolute top-2 right-2 rounded-full group flex items-center justify-center focus-within:outline-red-500"
 				on:click={closeGalleryModal}
 			>
-				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-					><g fill="none"
-						><path
-							fill="url(#fluentColorDismissCircle240)"
-							d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2"
-						/><path
-							fill="url(#fluentColorDismissCircle241)"
-							d="m15.53 8.47l-.084-.073a.75.75 0 0 0-.882-.007l-.094.08L12 10.939l-2.47-2.47l-.084-.072a.75.75 0 0 0-.882-.007l-.094.08l-.073.084a.75.75 0 0 0-.007.882l.08.094L10.939 12l-2.47 2.47l-.072.084a.75.75 0 0 0-.007.882l.08.094l.084.073a.75.75 0 0 0 .882.007l.094-.08L12 13.061l2.47 2.47l.084.072a.75.75 0 0 0 .882.007l.094-.08l.073-.084a.75.75 0 0 0 .007-.882l-.08-.094L13.061 12l2.47-2.47l.072-.084a.75.75 0 0 0 .007-.882z"
-						/><defs
-							><linearGradient
-								id="fluentColorDismissCircle240"
-								x1="5.125"
-								x2="18.25"
-								y1="3.25"
-								y2="22.625"
-								gradientUnits="userSpaceOnUse"
-								><stop stop-color="#F83F54" /><stop
-									offset="1"
-									stop-color="#CA2134"
-								/></linearGradient
-							><linearGradient
-								id="fluentColorDismissCircle241"
-								x1="8.685"
-								x2="12.591"
-								y1="12.332"
-								y2="16.392"
-								gradientUnits="userSpaceOnUse"
-								><stop stop-color="#FDFDFD" /><stop
-									offset="1"
-									stop-color="#FECBE6"
-								/></linearGradient
-							></defs
-						></g
-					></svg
+				<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 28 28"
+					><path
+						fill="#9B5F3E"
+						color="#9B5F3E"
+						d="M18.28 9.72a.75.75 0 0 1 0 1.06L15.06 14l3.22 3.22a.75.75 0 1 1-1.06 1.06L14 15.06l-3.22 3.22a.75.75 0 1 1-1.06-1.06L12.94 14l-3.22-3.22a.75.75 0 1 1 1.06-1.06L14 12.94l3.22-3.22a.75.75 0 0 1 1.06 0M26 14c0-6.627-5.373-12-12-12S2 7.373 2 14s5.373 12 12 12s12-5.373 12-12M3.5 14C3.5 8.201 8.201 3.5 14 3.5S24.5 8.201 24.5 14S19.799 24.5 14 24.5S3.5 19.799 3.5 14"
+					/></svg
 				>
 			</button>
 
@@ -211,10 +184,15 @@
 							space-between="10"
 							navigation="true"
 						>
-							<swiper-slide>
-								<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-							</swiper-slide>
-							<swiper-slide>
+							{#each slice.primary.imggallery as item}
+								<swiper-slide>
+									<PrismicImage
+										class="w-full h-[300px] object-cover rounded-lg shadow-lg cursor-pointer"
+										field={item.image}
+									/>
+								</swiper-slide>
+							{/each}
+							<!-- <swiper-slide>
 								<img src="https://swiperjs.com/demos/images/nature-2.jpg" />
 							</swiper-slide>
 							<swiper-slide>
@@ -240,17 +218,25 @@
 							</swiper-slide>
 							<swiper-slide>
 								<img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-							</swiper-slide>
+							</swiper-slide> -->
 						</swiper-container>
 
 						<swiper-container
 							class="mySwiper2"
 							space-between="10"
-							slides-per-view="4"
+							slides-per-view="6"
 							free-mode="true"
 							watch-slides-progress="true"
 						>
-							<swiper-slide>
+							{#each slice.primary.imggallery as item}
+								<swiper-slide>
+									<PrismicImage
+										class="w-full h-[300px] object-cover rounded-lg shadow-lg cursor-pointer"
+										field={item.image}
+									/>
+								</swiper-slide>
+							{/each}
+							<!-- <swiper-slide>
 								<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
 							</swiper-slide>
 							<swiper-slide>
@@ -279,7 +265,7 @@
 							</swiper-slide>
 							<swiper-slide>
 								<img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-							</swiper-slide>
+							</swiper-slide> -->
 						</swiper-container>
 					</div>
 					<!-- <div class="swiper-pagination"></div>
@@ -316,6 +302,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding: 0;
+		margin: 0;
 	}
 
 	swiper-slide img {
@@ -328,8 +316,8 @@
 	swiper-container {
 		width: 100%;
 		height: 300px;
-		margin-left: auto;
-		margin-right: auto;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	swiper-slide {
@@ -345,7 +333,7 @@
 	.mySwiper2 {
 		height: 20%;
 		box-sizing: border-box;
-		padding: 10px 0;
+		padding: 1px 0;
 	}
 
 	.mySwiper2 swiper-slide {
@@ -360,8 +348,8 @@
 
 	swiper-slide img {
 		display: block;
-		width: 100%;
-		height: 100%;
+		width: 70%;
+		height: 70%;
 		object-fit: cover;
 	}
 </style>
