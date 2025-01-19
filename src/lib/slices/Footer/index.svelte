@@ -15,6 +15,9 @@
 		if (year) currentYear = year;
 	};
 
+	$: if (slice.primary.navigationcolumn)
+		console.log(slice.primary.navigationcolumn, 'slice.primary.navigationcolumn');
+
 	onMount(() => {
 		verifyCurrentYear();
 	});
@@ -200,12 +203,14 @@
 
 						<nav class="flex flex-col gap-4">
 							{#each item.link as link (link.key)}
-								<div>
-									<PrismicLink
-										class="text-white transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-										field={link}
-									/>
-								</div>
+								{#if link && link.text}
+									<div>
+										<PrismicLink
+											class="text-white transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+											field={link}
+										/>
+									</div>
+								{/if}
 							{/each}
 						</nav>
 					</div>
