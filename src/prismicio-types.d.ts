@@ -5,6 +5,85 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *BottomNavigation → NavigationColumn*
+ */
+export interface BottomnavigationDocumentDataNavigationcolumnItem {
+	/**
+	 * Title field in *BottomNavigation → NavigationColumn*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bottomnavigation.navigationcolumn[].title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Link field in *BottomNavigation → NavigationColumn*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bottomnavigation.navigationcolumn[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.Repeatable<prismic.LinkField>;
+}
+
+/**
+ * Content for BottomNavigation documents
+ */
+interface BottomnavigationDocumentData {
+	/**
+	 * Logo field in *BottomNavigation*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bottomnavigation.logo
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
+
+	/**
+	 * Description field in *BottomNavigation*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bottomnavigation.description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * NavigationColumn field in *BottomNavigation*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bottomnavigation.navigationcolumn[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	navigationcolumn: prismic.GroupField<Simplify<BottomnavigationDocumentDataNavigationcolumnItem>>;
+}
+
+/**
+ * BottomNavigation document from Prismic
+ *
+ * - **API ID**: `bottomnavigation`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BottomnavigationDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<
+		Simplify<BottomnavigationDocumentData>,
+		'bottomnavigation',
+		Lang
+	>;
+
+/**
  * Item in *Navigation → Links*
  */
 export interface NavigationDocumentDataLinksItem {
@@ -254,7 +333,11 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes =
+	| BottomnavigationDocument
+	| NavigationDocument
+	| PageDocument
+	| SettingsDocument;
 
 /**
  * Primary content in *AboutUs → Default → Primary*
@@ -1948,6 +2031,9 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			BottomnavigationDocument,
+			BottomnavigationDocumentData,
+			BottomnavigationDocumentDataNavigationcolumnItem,
 			NavigationDocument,
 			NavigationDocumentData,
 			NavigationDocumentDataLinksItem,

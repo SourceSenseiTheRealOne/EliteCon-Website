@@ -31,7 +31,7 @@
 			<div class="ml-2 lg:hidden">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class=" text-lg font-semibold text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
+					class=" text-lg font-semibold text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:text-orange-300"
 					width="1.55em"
 					height="1.55em"
 					viewBox="0 0 256 256"
