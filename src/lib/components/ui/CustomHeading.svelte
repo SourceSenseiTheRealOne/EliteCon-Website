@@ -5,3 +5,5 @@
   <h2 class="text-4xl lg:text-6xl lg:mb-6 mb-4 font-medium text-black uppercase text-nowrap">
     <slot />
   </h2>
+
+  

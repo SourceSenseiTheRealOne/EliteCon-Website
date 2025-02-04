@@ -141,7 +141,7 @@
 					<div class="relative text-center items-center flex group">
 						<ul>
 							<li
-								class="text-md font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-yellow-300"
+								class="text-md font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-orange-300"
 							>
 								<PrismicLink field={item.pagelink}>
 									<PrismicText field={item.label} />
