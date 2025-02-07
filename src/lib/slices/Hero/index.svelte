@@ -69,7 +69,7 @@
 
 	<div class="video-content z-40 space-y-2">
 		<!-- <h1 class="text-6xl font-light mb-12">Luxury Outdoor <span class="text-orange-200">Spaces</span></h1> -->
-		<h1 class="text-6xl font-light mb-12"><PrismicRichText field={slice.primary.text} /></h1>
+		<h1 class="text-6xl text-balance font-light mb-12"><PrismicRichText field={slice.primary.text} /></h1>
 		<ButtonLink on:click={toggleContactModal} class="cursor-pointer"
 			>{slice.primary.buttonText}</ButtonLink
 		>

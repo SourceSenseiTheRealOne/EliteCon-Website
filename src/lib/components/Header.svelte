@@ -22,6 +22,12 @@
 		isMobileDropdownOpen = !isMobileDropdownOpen;
 	};
 
+	let openDropdownIndex: any = null;
+
+	const toggleDropdown = (index) => {
+		openDropdownIndex = openDropdownIndex === index ? null : index;
+	};
+
 	let name = '';
 	let email = '';
 	let message = '';
@@ -168,19 +174,42 @@
 
 	{#if isMobileDropdownOpen}
 		<div class="md:text-base lg:hidden">
-			<nav class="flex space-x-3 mt-4 justify-center">
-				<!-- Added flex and space-x-4 -->
-				{#each navigation.data?.mobilenavigation as item}
-					<div class="relative text-center items-center flex group">
+			<nav class="flex flex-col space-y-3 mt-4">
+				{#each navigation.data?.links as item, index}
+					<div class="relative text-center">
+						<!-- Main navigation item -->
 						<ul>
 							<li
-								class="text-md font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-orange-300"
+								on:click={() => toggleDropdown(index)}
+								class="text-md font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-orange-300 flex justify-between items-center"
 							>
-								<PrismicLink field={item.pagelink}>
-									<PrismicText field={item.label} />
-								</PrismicLink>
+								<PrismicText field={item.label} />
+								{#if Array.isArray(item.link) && item.link.length > 1}
+									<!-- Show dropdown arrow only if item has sub-links -->
+									<span class="ml-2">▼</span>
+								{/if}
 							</li>
 						</ul>
+
+						<!-- Dropdown menu (if applicable) -->
+						{#if openDropdownIndex === index}
+							<div class="mt-2 bg-black bg-opacity-75 border-orange-400 border rounded-xl">
+								<ul class="py-2">
+									{#each item.link as link}
+										{#if link.slug}
+											<li>
+												<PrismicLink
+													class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
+													field={link}
+												>
+													{link.slug.replace(/-/g, ' ')}
+												</PrismicLink>
+											</li>
+										{/if}
+									{/each}
+								</ul>
+							</div>
+						{/if}
 					</div>
 				{/each}
 			</nav>
