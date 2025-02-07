@@ -35,11 +35,13 @@
 	<div class="flex flex-col gap-4">
 		<h3 class="text-xl uppercase text-center">LET'S GET STARTED</h3>
 		<div class="flex flex-row gap-4 justify-center items-center text-center">
-			<ButtonLink class="cursor-pointer">Send Us A message</ButtonLink>
+			<ButtonLink href="mailto:info@elitecon.ca" class="cursor-pointer"
+				>Send Us A message</ButtonLink
+			>
 
 			<p class="mb-1 text-lg">or</p>
 
-			<ButtonLink class="cursor-pointer">Call 416-704-3637</ButtonLink>
+			<ButtonLink href="tel:4168254614" class="cursor-pointer">Call 416-704-3637</ButtonLink>
 		</div>
 	</div>
 </div>

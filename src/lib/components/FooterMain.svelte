@@ -212,7 +212,7 @@ onMount(() => {
                             {#if link && link.text}
                                 <div>
                                     <PrismicLink
-                                        class="text-white transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                                        class="text-white transition duration-100 hover:text-orange-300 focus:ring-2 focus:ring-orange-300 cursor-pointer"
                                         field={link}
                                     />
                                 </div>

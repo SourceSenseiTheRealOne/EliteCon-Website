@@ -25,6 +25,10 @@
 
 			<PrismicRichText {components} field={slice.primary.title} />
 
+
+			
+
+
 			<!-- <p class="max-w-sm text-center text-gray-400 lg:text-right">
 				<PrismicRichText field={slice.primary.description} />
 			</p> -->

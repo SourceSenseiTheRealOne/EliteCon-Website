@@ -236,7 +236,7 @@
 											>
 										</div>
 										<div class="p-2 w-full pt-3 mt-4 border-t border-gray-200 text-center">
-											<a href="/" class="text-orange-300">example@email.com</a>
+											<a href="mailto:info@elitecon.ca" class="text-orange-300">info@elitecon.ca</a>
 											<!-- <p class="leading-normal my-2">
 												49 Smith St.
 												<br />Saint Cloud, MN 56301
