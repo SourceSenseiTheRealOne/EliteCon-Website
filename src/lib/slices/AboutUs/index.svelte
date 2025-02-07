@@ -5,10 +5,42 @@
 
 	import OrangeHeading from '$lib/components/ui/OrangeHeading.svelte';
 
+	import emailjs from '@emailjs/browser';
+
 	export let slice: Content.AboutUsSlice;
 
 	const components: PrismicRichText['components'] = {
 		heading2: OrangeHeading
+	};
+
+	let name = '';
+	let email = '';
+	let message = '';
+
+	const sendEmail = async () => {
+		const serviceID = 'your_service_id';
+		const templateID = 'your_template_id';
+		const userID = 'your_public_key';
+
+		const templateParams = {
+			name,
+			email,
+			message
+		};
+
+		try {
+			const response = await emailjs.send(serviceID, templateID, templateParams, userID);
+			alert('Email sent successfully!');
+			console.log('EmailJS Response:', response);
+
+			// Reset form fields
+			name = '';
+			email = '';
+			message = '';
+		} catch (error) {
+			console.error('EmailJS Error:', error);
+			alert('Failed to send email. Please try again.');
+		}
 	};
 </script>
 
@@ -30,13 +62,17 @@
 
 		<div>
 			<!-- form - start -->
-			<form class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2">
+			<form
+				on:submit|preventDefault={sendEmail}
+				class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2"
+			>
 				<div>
-					<label for="first-name" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"
+					<label for="name" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"
 						>First name*</label
 					>
 					<input
-						name="first-name"
+						name="name"
+						bind:value={name}
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-orange-200 outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
 				</div>
@@ -67,6 +103,7 @@
 					>
 					<input
 						name="email"
+						bind:value={email}
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-orange-200 outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
 				</div>
@@ -87,12 +124,13 @@
 					>
 					<textarea
 						name="message"
+						bind:value={message}
 						class="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-orange-200 outline-none ring-orange-300 transition duration-100 focus:ring"
 					></textarea>
 				</div>
 
 				<div class="flex items-center justify-between sm:col-span-2">
-					<ButtonLink class="cursor-pointer">Send</ButtonLink>
+					<ButtonLink type="submit" class="cursor-pointer">Send</ButtonLink>
 					<!-- <button
 						class="inline-block rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-orange-300 transition duration-100 hover:bg-orange-600 focus-visible:ring active:bg-indigo-700 md:text-base"
 						>Send</button
