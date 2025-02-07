@@ -26,7 +26,7 @@
 			{#each slice.primary.card as item}
 				<!-- Render content for item -->
 				<div class="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-					<div class="text-center text-white">
+					<div class="text-center text-white h-full">
 						<PrismicRichText field={item.testimonial} />
 					</div>
 
