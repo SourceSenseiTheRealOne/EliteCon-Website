@@ -13,8 +13,18 @@
 		heading2: OrangeHeading
 	};
 
-	let name = '';
+	// 	- first name
+	// - last name
+	// - company
+	// - email
+	// - subject
+	// - message
+
+	let firstName = '';
+	let lastName = '';
+	let company = '';
 	let email = '';
+	let subject = '';
 	let message = '';
 
 	const sendEmail = async () => {
@@ -23,8 +33,11 @@
 		const userID = 'your_public_key';
 
 		const templateParams = {
-			name,
+			firstName,
+			lastName,
+			company,
 			email,
+			subject,
 			message
 		};
 
@@ -34,8 +47,11 @@
 			console.log('EmailJS Response:', response);
 
 			// Reset form fields
-			name = '';
+
+			firstName = '';
+			lastName = '';
 			email = '';
+			subject = '';
 			message = '';
 		} catch (error) {
 			console.error('EmailJS Error:', error);
@@ -71,8 +87,8 @@
 						>First name*</label
 					>
 					<input
-						name="name"
-						bind:value={name}
+						name="firstName"
+						bind:value={firstName}
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-orange-200 outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
 				</div>
@@ -82,7 +98,8 @@
 						>Last name*</label
 					>
 					<input
-						name="last-name"
+						bind:value={lastName}
+						name="lastName"
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-orange-200 outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
 				</div>
@@ -92,6 +109,7 @@
 						>Company</label
 					>
 					<input
+						bind:value={company}
 						name="company"
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-orange-200 outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
@@ -113,6 +131,7 @@
 						>Subject*</label
 					>
 					<input
+						bind:value={subject}
 						name="subject"
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-orange-200 outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>

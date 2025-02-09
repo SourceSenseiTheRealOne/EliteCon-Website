@@ -41,8 +41,9 @@
 
 			<p class="mb-1 text-lg">or</p>
 
-			<ButtonLink href="tel:4168254614" class="cursor-pointer">Call 416-704-3637</ButtonLink>
+			<ButtonLink href="tel:4168254614" class="cursor-pointer">Call 4168254614</ButtonLink>
 		</div>
 	</div>
 </div>
+
 <PrismicPreview {repositoryName} />
