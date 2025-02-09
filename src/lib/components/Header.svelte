@@ -66,14 +66,15 @@
 	class="fixed top-0 left-0 w-full z-50 py-1 bg-black bg-opacity-65 px-2"
 >
 	<header class="flex items-center justify-between">
-		<a href="/" class="inline-flex items-center text-2xl font-bold text-white lg:hidden">
-			<div class="ml-2 lg:hidden">
+		<a href="tel:4168254614" class="inline-flex items-center text-2xl font-bold text-white lg:hidden">
+			<div class="ml-2 lg:hidden" >
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class=" text-lg font-semibold text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:text-orange-300"
 					width="1.55em"
 					height="1.55em"
 					viewBox="0 0 256 256"
+					
 					{...$$props}
 					><path
 						fill="currentColor"
