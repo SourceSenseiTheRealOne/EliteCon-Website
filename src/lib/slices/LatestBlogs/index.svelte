@@ -18,7 +18,7 @@
 >
 	<div class="mx-auto max-w-screen-6xl px-4 md:px-8">
 		<!-- text - start -->
-		<div class="mb-8 md:mb-16 text-center">
+		<div class="mb-8 md:mb-16 items-center flex flex-col justify-center text-center">
 			<PrismicRichText {components} field={slice.primary.title} />
 
 			<p class="mx-auto min-w-screen-md text-center text-gray-500 md:text-lg">
@@ -33,7 +33,7 @@
 				<!-- Render content for item -->
 				<PrismicLink
 					field={item.postlink}
-					class="group relative flex h-48 flex-col overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-64 xl:h-96 cursor-pointer"
+					class="group relative w-full min-w-[200px] md:min-w-[300px] lg:min-w-[350px] flex h-48 flex-col overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-64 xl:h-96 cursor-pointer"
 				>
 					<PrismicImage
 						class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"

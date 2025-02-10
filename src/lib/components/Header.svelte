@@ -33,9 +33,9 @@
 	let message = '';
 
 	const sendEmail = async () => {
-		const serviceID = 'your_service_id';
-		const templateID = 'your_template_id';
-		const userID = 'your_public_key';
+		const serviceID = 'info@elitecon.ca';
+		const templateID = 'template_qrug1bj';
+		const userID = 'jlGy-a_PB1VUcaK1J';
 
 		const templateParams = {
 			name,
@@ -66,15 +66,17 @@
 	class="fixed top-0 left-0 w-full z-50 py-1 bg-black bg-opacity-65 px-2"
 >
 	<header class="flex items-center justify-between">
-		<a href="tel:4168254614" class="inline-flex items-center text-2xl font-bold text-white lg:hidden">
-			<div class="ml-2 lg:hidden" >
+		<a
+			href="tel:4168254614"
+			class="inline-flex items-center text-2xl font-bold text-white lg:hidden"
+		>
+			<div class="ml-2 lg:hidden">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class=" text-lg font-semibold text-orange-200 transition-colors hover:text-orange-300 focus:ring-2 focus:text-orange-300"
 					width="1.55em"
 					height="1.55em"
 					viewBox="0 0 256 256"
-					
 					{...$$props}
 					><path
 						fill="currentColor"
@@ -110,7 +112,7 @@
 						</ul>
 
 						<div
-							class="hidden group-hover:block rounded-xl lg:shadow-lg bg-black bg-opacity-75 border-orange-400 border absolute top-full w-max left-1/2 transform -translate-x-1/2"
+							class="hidden group-hover:block rounded-lg lg:shadow-lg bg-black bg-opacity-75 ring-orange-300 transition-colors after:absolute after:inset-0 after:-z-10   after:transition-all after:duration-500 hover:border-orange-200/40 hover:text-orange-300 after:hover:bg-opacity-15 focus:ring-2 absolute top-full w-max left-1/2 transform -translate-x-1/2"
 						>
 							<ul class="py-2">
 								{#each item.link as link, index}
@@ -175,29 +177,31 @@
 
 	{#if isMobileDropdownOpen}
 		<div class="md:text-base lg:hidden">
-			<nav class="flex flex-col space-y-3 mt-4">
+			<nav class="flex flex-row gap-4 text-center mt-4">
 				{#each navigation.data?.links as item, index}
 					<div class="relative text-center">
 						<!-- Main navigation item -->
-						<ul>
-							<li
-								on:click={() => toggleDropdown(index)}
-								class="text-md font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-orange-300 flex justify-between items-center"
-							>
-								<PrismicText field={item.label} />
-								{#if Array.isArray(item.link) && item.link.length > 1}
-									<!-- Show dropdown arrow only if item has sub-links -->
-									<span class="ml-2">▼</span>
-								{/if}
-							</li>
-						</ul>
+						{#if item}
+							<ul>
+								<li
+									on:click={() => toggleDropdown(index)}
+									class="text-md font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-orange-300 flex justify-between items-center"
+								>
+									<PrismicText field={item.label} />
+									{#if Array.isArray(item.link) && item.link && item.link.length > 1}
+										<!-- Show dropdown arrow only if item has sub-links -->
+										<span class="ml-2">▼</span>
+									{/if}
+								</li>
+							</ul>
+						{/if}
 
 						<!-- Dropdown menu (if applicable) -->
 						{#if openDropdownIndex === index}
-							<div class="mt-2 bg-black bg-opacity-75 border-orange-400 border rounded-xl">
+							<div class="mt-2 bg-black bg-opacity-75 border-orange-300 border rounded-xl">
 								<ul class="py-2">
 									{#each item.link as link}
-										{#if link.slug}
+										{#if link && link.slug}
 											<li>
 												<PrismicLink
 													class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
@@ -220,7 +224,7 @@
 
 {#if isContactModalOpen}
 	<div class="relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-		<div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+		<div class="fixed  inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
 
 		<div class="fixed inset-0 z-10 w-screen overflow-y-auto">
 			<div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
@@ -270,7 +274,7 @@
 															id="name"
 															name="name"
 															bind:value={name}
-															class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+															class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 														/>
 													</div>
 												</div>
@@ -282,7 +286,7 @@
 															id="email"
 															name="email"
 															bind:value={email}
-															class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+															class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-300 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 														/>
 													</div>
 												</div>
@@ -296,13 +300,14 @@
 														id="message"
 														name="message"
 														bind:value={message}
-														class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+														class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-300 h-32 text-base outline-none text-black py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
 													></textarea>
 												</div>
 											</div>
 											<div class="p-2 w-full">
 												<button
-													type="submit"
+													on:click={sendEmail}
+													type="button"
 													class="flex mx-auto text-white bg-gradient-to-r shadow-lg from-[#fda58a] to-[#f59e0b] border-0 py-1.5 px-6 focus:outline-none hover:bg-orange-500 rounded-2xl text-lg"
 													>Submit</button
 												>
