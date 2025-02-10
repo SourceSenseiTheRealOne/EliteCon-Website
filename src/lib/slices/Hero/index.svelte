@@ -9,6 +9,8 @@
 	import ButtonLink from '$lib/components/ButtonLink.svelte';
 
 	export let slice: Content.HeroSlice;
+	
+	import emailjs from '@emailjs/browser';
 
 	let isBgImageFound = false;
 
@@ -32,6 +34,38 @@
 
 	const toggleContactModal = () => {
 		isContactModalOpen = !isContactModalOpen;
+	};
+
+
+	let name = '';
+	let email = '';
+	let message = '';
+
+	const sendEmail = async () => {
+		const serviceID = 'info@elitecon.ca';
+		const templateID = 'template_qrug1bj';
+		const userID = 'jlGy-a_PB1VUcaK1J';
+
+		const templateParams = {
+			name,
+			email,
+			message
+		};
+
+		try {
+			const response = await emailjs.send(serviceID, templateID, templateParams, userID);
+			alert('Email sent successfully!');
+			console.log('EmailJS Response:', response);
+
+			// Reset form fields
+			name = '';
+			email = '';
+			message = '';
+			toggleContactModal();
+		} catch (error) {
+			console.error('EmailJS Error:', error);
+			alert('Failed to send email. Please try again.');
+		}
 	};
 </script>
 
@@ -82,30 +116,10 @@
 
 {#if isContactModalOpen}
 	<div class="relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-		<!--
-		  Background backdrop, show/hide based on modal state.
-	  
-		  Entering: "ease-out duration-300"
-			From: "opacity-0"
-			To: "opacity-100"
-		  Leaving: "ease-in duration-200"
-			From: "opacity-100"
-			To: "opacity-0"
-		-->
-		<div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+		<div class="fixed  inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
 
 		<div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-			<div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-				<!--
-			  Modal panel, show/hide based on modal state.
-	  
-			  Entering: "ease-out duration-300"
-				From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-				To: "opacity-100 translate-y-0 sm:scale-100"
-			  Leaving: "ease-in duration-200"
-				From: "opacity-100 translate-y-0 sm:scale-100"
-				To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-			-->
+			<div class="flex min-h-full items-start justify-center p-4 text-center sm:items-start sm:p-0">
 				<div
 					class="relative transform overflow-hidden rounded-lg bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-slate-100 to-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
 				>
@@ -142,65 +156,104 @@
 								</div>
 								<div class="w-full px-12 mx-auto">
 									<div class="flex flex-wrap -m-2">
-										<div class="p-2 w-1/2">
-											<div class="relative">
-												<label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-												<input
-													type="text"
-													id="name"
-													name="name"
-													class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-												/>
+										<form class="w-full" on:submit|preventDefault={sendEmail}>
+											<div class="flex flex-row gap-4">
+												<div class="p-2 w-1/2">
+													<div class="relative">
+														<label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+														<input
+															type="text"
+															id="name"
+															name="name"
+															bind:value={name}
+															class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+														/>
+													</div>
+												</div>
+												<div class="p-2 w-1/2">
+													<div class="relative">
+														<label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+														<input
+															type="email"
+															id="email"
+															name="email"
+															bind:value={email}
+															class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-300 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+														/>
+													</div>
+												</div>
 											</div>
-										</div>
-										<div class="p-2 w-1/2">
-											<div class="relative">
-												<label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-												<input
-													type="email"
-													id="email"
-													name="email"
-													class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-												/>
+											<div class="p-2 w-full">
+												<div class="relative">
+													<label for="message" class="leading-7 text-sm text-gray-600"
+														>Message</label
+													>
+													<textarea
+														id="message"
+														name="message"
+														bind:value={message}
+														class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-300 h-32 text-base outline-none text-black py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+													></textarea>
+												</div>
 											</div>
-										</div>
-										<div class="p-2 w-full">
-											<div class="relative">
-												<label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-												<textarea
-													id="message"
-													name="message"
-													class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-300 focus:bg-white focus:ring-2 focus:ring-orange-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-												></textarea>
+											<div class="p-2 w-full">
+												<button
+													on:click={sendEmail}
+													type="button"
+													class="flex mx-auto text-white bg-gradient-to-r shadow-lg from-[#fda58a] to-[#f59e0b] border-0 py-1.5 px-6 focus:outline-none hover:bg-orange-500 rounded-2xl text-lg"
+													>Submit</button
+												>
 											</div>
-										</div>
-										<div class="p-2 w-full">
-											<button
-												class="flex mx-auto text-white bg-gradient-to-r shadow-lg from-[#fda58a] to-[#f59e0b] border-0 py-1.5 px-6 focus:outline-none hover:bg-orange-500 rounded-2xl text-lg"
-												>Submit</button
-											>
-										</div>
-										<div class="p-2 w-full pt-3 mt-4 border-t border-gray-200 text-center">
-											<a class="text-orange-300">example@email.com</a>
-											<!-- <p class="leading-normal my-2">
-												49 Smith St.
-												<br />Saint Cloud, MN 56301
-											</p>
-											<span class="inline-flex">
-												<a class="text-gray-500">
-													<svg
+											<div class="p-2 w-full pt-3 mt-4 border-t border-gray-200 text-center">
+												<p class="text-orange-300">info@elitecon.ca</p>
+												<!-- <p class="leading-normal my-2">
+													49 Smith St.
+													<br />Saint Cloud, MN 56301
+													</p>
+													<span class="inline-flex">
+														<a href="/" class="text-gray-500">
+														<svg
 														fill="currentColor"
 														stroke-linecap="round"
 														stroke-linejoin="round"
 														stroke-width="2"
 														class="w-5 h-5"
 														viewBox="0 0 24 24"
-													>
+														>
 														<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
 														></path>
+														</svg>
+														</a>
+														<a href="/" class="ml-4 text-gray-500">
+														<svg
+														fill="currentColor"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														stroke-width="2"
+														class="w-5 h-5"
+														viewBox="0 0 24 24"
+														>
+														<path
+														d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+														></path>
 													</svg>
-												</a>
-												<a class="ml-4 text-gray-500">
+													</a>
+													<a href="/" class="ml-4 text-gray-500">
+													<svg
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													class="w-5 h-5"
+													viewBox="0 0 24 24"
+													>
+													<rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+													<path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+													></path>
+													</svg>
+													</a>
+													<a href="/" class="ml-4 text-gray-500">
 													<svg
 														fill="currentColor"
 														stroke-linecap="round"
@@ -208,43 +261,15 @@
 														stroke-width="2"
 														class="w-5 h-5"
 														viewBox="0 0 24 24"
-													>
+														>
 														<path
-															d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+														d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
 														></path>
-													</svg>
-												</a>
-												<a class="ml-4 text-gray-500">
-													<svg
-														fill="none"
-														stroke="currentColor"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														stroke-width="2"
-														class="w-5 h-5"
-														viewBox="0 0 24 24"
-													>
-														<rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-														<path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
-														></path>
-													</svg>
-												</a>
-												<a class="ml-4 text-gray-500">
-													<svg
-														fill="currentColor"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														stroke-width="2"
-														class="w-5 h-5"
-														viewBox="0 0 24 24"
-													>
-														<path
-															d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
-														></path>
-													</svg>
-												</a>
-											</span> -->
-										</div>
+														</svg>
+														</a>
+														</span> -->
+											</div>
+										</form>
 									</div>
 								</div>
 							</div>
