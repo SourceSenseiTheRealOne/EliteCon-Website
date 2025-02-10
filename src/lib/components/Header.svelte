@@ -258,9 +258,9 @@
 									<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
 										Contact Us
 									</h1>
-									<p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+									<!-- <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
 										Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.
-									</p>
+									</p> -->
 								</div>
 								<div class="w-full px-12 mx-auto">
 									<div class="flex flex-wrap -m-2">
