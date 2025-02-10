@@ -12,6 +12,8 @@
 
 	let isContactModalOpen = false;
 
+	$: if (navigation.data?.links) console.log(navigation.data?.links, 'navigation.data?.links');
+
 	const toggleContactModal = () => {
 		isContactModalOpen = !isContactModalOpen;
 	};
@@ -23,6 +25,7 @@
 	};
 
 	let openDropdownIndex: any = null;
+	let menuRef: HTMLElement | null = null;
 
 	const toggleDropdown = (index) => {
 		openDropdownIndex = openDropdownIndex === index ? null : index;
@@ -58,6 +61,18 @@
 			alert('Failed to send email. Please try again.');
 		}
 	};
+
+
+		// Close when clicking outside
+		const handleClickOutside = (event: MouseEvent) => {
+		if (menuRef && !menuRef.contains(event.target as Node)) {
+			isMobileDropdownOpen = false;
+			openDropdownIndex = null;
+		}
+	};
+
+
+	
 </script>
 
 <Bounded
@@ -112,7 +127,7 @@
 						</ul>
 
 						<div
-							class="hidden group-hover:block rounded-lg lg:shadow-lg bg-black bg-opacity-75 ring-orange-300 transition-colors after:absolute after:inset-0 after:-z-10   after:transition-all after:duration-500 hover:border-orange-200/40 hover:text-orange-300 after:hover:bg-opacity-15 focus:ring-2 absolute top-full w-max left-1/2 transform -translate-x-1/2"
+							class="hidden group-hover:block rounded-lg lg:shadow-lg bg-black bg-opacity-75 ring-orange-300 transition-colors after:absolute after:inset-0 after:-z-10 after:transition-all after:duration-500 hover:border-orange-200/40 hover:text-orange-300 after:hover:bg-opacity-15 focus:ring-2 absolute top-full w-max left-1/2 transform -translate-x-1/2"
 						>
 							<ul class="py-2">
 								{#each item.link as link, index}
@@ -175,6 +190,7 @@
 		<!-- buttons - end -->
 	</header>
 
+	<div bind:this={menuRef} on:click={handleClickOutside}>
 	{#if isMobileDropdownOpen}
 		<div class="md:text-base lg:hidden">
 			<nav class="flex flex-row gap-4 text-center mt-4">
@@ -198,33 +214,38 @@
 
 						<!-- Dropdown menu (if applicable) -->
 						{#if openDropdownIndex === index}
-							<div class="mt-2 bg-black bg-opacity-75 border-orange-300 border rounded-xl">
-								<ul class="py-2">
-									{#each item.link as link}
-										{#if link && link.slug}
-											<li>
-												<PrismicLink
-													class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
-													field={link}
-												>
-													{link.slug.replace(/-/g, ' ')}
-												</PrismicLink>
-											</li>
-										{/if}
-									{/each}
-								</ul>
-							</div>
+							{#if item.link.length > 1}
+								<div
+									class="absolute left-0 mt-2 w-full min-w-[200px] bg-black bg-opacity-75 border-orange-300 border rounded-xl z-50"
+								>
+									<ul class="py-2">
+										{#each item.link as link}
+											{#if link && link.slug}
+												<li>
+													<PrismicLink
+														class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
+														field={link}
+													>
+														{link.slug.replace(/-/g, ' ')}
+													</PrismicLink>
+												</li>
+											{/if}
+										{/each}
+									</ul>
+								</div>
+							{/if}
 						{/if}
 					</div>
 				{/each}
 			</nav>
 		</div>
 	{/if}
+</div>
 </Bounded>
 
 {#if isContactModalOpen}
 	<div class="relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-		<div class="fixed  inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+		<div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
 
 		<div class="fixed inset-0 z-10 w-screen overflow-y-auto">
 			<div class="flex min-h-full items-start justify-center p-4 text-center sm:items-start sm:p-0">
