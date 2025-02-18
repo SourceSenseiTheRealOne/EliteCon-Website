@@ -11,8 +11,11 @@
 	export let data;
 </script>
 
+
 <svelte:head>
 	<title>{$page.data.title}</title>
+
+	<script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=elite-con-website"></script>
 	{#if $page.data.meta_description}
 		<meta name="description" content={$page.data.meta_description} />
 	{/if}
