@@ -189,17 +189,17 @@
 	<div bind:this={menuRef} on:click={handleClickOutside}>
 		{#if isMobileDropdownOpen}
 			<div class="md:text-base lg:hidden">
-				<nav class="flex flex-row gap-4 text-center mt-4">
+				<nav class="flex flex-row gap-4 text-center mt-4 max-w-full flex-wrap">
 					{#each navigation.data?.links as item, index}
-						<div class="relative text-center ">
+						<div class="relative text-center">
 							<!-- Main navigation item -->
 							{#if item}
 								<ul class="">
 									<li
 										on:click={() => toggleDropdown(index)}
-										class="text-md  font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-orange-300 flex justify-between items-center"
+										class="text-md font-normal cursor-pointer text-white transition-colors hover:text-orange-300 focus:ring-2 focus:ring-orange-300 flex justify-between items-center"
 									>
-										<PrismicLink field={item.mainlinkitem}>
+										<PrismicLink class="text-nowrap" field={item.mainlinkitem}>
 											<PrismicText field={item.label} />
 											{#if Array.isArray(item.link) && item.link && item.link.length > 1}
 												<!-- Show dropdown arrow only if item has sub-links -->
