@@ -18,6 +18,7 @@
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href={$page.url} />
 	<script src="https://analytics.ahrefs.com/analytics.js" data-key="fAzQlIWh8JzpArHv6dagBw" async></script>
+	<script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=elite-con-website"></script>
 
 	{#if $page.data.meta_description}
 		<meta name="description" content={$page.data.meta_description} />

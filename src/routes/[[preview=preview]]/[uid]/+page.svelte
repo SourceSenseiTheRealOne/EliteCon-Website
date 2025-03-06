@@ -12,6 +12,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 	<meta name="robots" content="index, follow" />
 
+	<script
+		async
+		defer
+		src="https://static.cdn.prismic.io/prismic.js?new=true&repo=elite-con-website"
+	></script>
+
 	{#if data.page.data.meta_description}
 		<meta name="description" content={data.page.data.meta_description} />
 		<meta property="og:description" content={data.page.data.meta_description} />
