@@ -16,7 +16,7 @@
 	data-slice-variation={slice.variation}
 	class="bg-black text-white py-6 sm:py-8 lg:py-12"
 >
-	<div class="mx-auto max-w-screen-md px-4 md:px-8">
+	<div class="mx-auto text-center max-w-screen-lg px-4 md:px-8">
 		{#if slice.primary.title}
 			<PrismicRichText {components} field={slice.primary.title} />
 		{/if}
@@ -31,7 +31,7 @@
 			{#if item}
 				<!-- Render content for item -->
 				{#if item.title}
-					<h3 class="mb-2 text-xl text-center font-semibold text-white sm:text-2xl md:mb-4">
+					<h3 class="mb-2 text-xl text-center justify-center text-balance items-center font-semibold text-white sm:text-2xl md:mb-4">
 						<PrismicRichText field={item.title} />
 					</h3>
 				{/if}

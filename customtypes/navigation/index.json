@@ -42,35 +42,6 @@
 						}
 					}
 				}
-			},
-			"mobilenavigation": {
-				"type": "Group",
-				"config": {
-					"label": "MobileNavigation",
-					"repeat": true,
-					"fields": {
-						"pagelink": {
-							"type": "Link",
-							"config": {
-								"label": "PageLink",
-								"placeholder": "",
-								"select": null,
-								"allowTargetBlank": true,
-								"allowText": true,
-								"repeat": false
-							}
-						},
-						"label": {
-							"type": "StructuredText",
-							"config": {
-								"label": "Label",
-								"placeholder": "",
-								"allowTargetBlank": true,
-								"multi": "paragraph,strong,em"
-							}
-						}
-					}
-				}
 			}
 		}
 	}

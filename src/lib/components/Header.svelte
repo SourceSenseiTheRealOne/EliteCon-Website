@@ -8,28 +8,102 @@
 	export let settings: Content.SettingsDocument;
 	export let navigation: Content.NavigationDocument;
 
+	import clsx from 'clsx';
+
 	import emailjs from '@emailjs/browser';
+	import { onMount, onDestroy } from 'svelte';
+
+	import { tick } from 'svelte';
+
+	// NAV ITEMS DATA
+
+	// ===============================================================================================
+
+	let className = undefined;
+
+	// $: if (navigation.data?.links) console.log(navigation.data?.links, 'navigation.data?.links');
+
+	// ===============================================================================================
+
+	// MOBILE DROPDOWN
+
+	// ===============================================================================================
 
 	let isContactModalOpen = false;
-
-	$: if (navigation.data?.links) console.log(navigation.data?.links, 'navigation.data?.links');
+	let menuRef: HTMLElement | null = null;
+	let menuButtonRef: HTMLElement | null = null;
+	let openDropdownIndex: any = null;
+	let isMobileDropdownOpen = false;
+	const isMobile = () => window.innerWidth < 1024;
 
 	const toggleContactModal = () => {
 		isContactModalOpen = !isContactModalOpen;
 	};
 
-	$: isMobileDropdownOpen = false;
+	// const toggleMobileDropdown = () => {
+	// 	isMobileDropdownOpen = !isMobileDropdownOpen;
+	// };
 
-	const toggleMobileDropdown = () => {
+	// const toggleMobileDropdown = () => {
+	// 	if (isMobile()) {
+	// 		isMobileDropdownOpen = !isMobileDropdownOpen;
+	// 	}
+	// };
+
+	const toggleMobileDropdown = async (event) => {
+		event.stopPropagation(); // Prevents bubbling
 		isMobileDropdownOpen = !isMobileDropdownOpen;
+		console.log('Dropdown state:', isMobileDropdownOpen);
+
+		await tick();
 	};
 
-	let openDropdownIndex: any = null;
-	let menuRef: HTMLElement | null = null;
+	// const handleClickOutside = (event: MouseEvent) => {
+	// 	if (isMobileDropdownOpen && menuRef && !menuRef.contains(event.target as Node)) {
+	// 		isMobileDropdownOpen = false;
+	// 	}
+	// };
+
+	// const handleClickOutside = (event: MouseEvent) => {
+	// 	if (
+	// 		isMobileDropdownOpen &&
+	// 		menuRef &&
+	// 		!menuRef.contains(event.target as Node) &&
+	// 		event.target !== menuButtonRef
+	// 	) {
+	// 		isMobileDropdownOpen = false;
+	// 	}
+	// };
+
+	const handleClickOutside = (event: MouseEvent) => {
+		if (
+			isMobileDropdownOpen &&
+			menuRef &&
+			!menuRef.contains(event.target as Node) &&
+			!menuButtonRef?.contains(event.target as Node) // Fix: Ensure clicks on the button don't close the menu
+		) {
+			isMobileDropdownOpen = false;
+		}
+	};
 
 	const toggleDropdown = (index) => {
 		openDropdownIndex = openDropdownIndex === index ? null : index;
 	};
+
+	// Close when clicking outside
+	// const handleClickOutside = (event: MouseEvent) => {
+
+	// 	if (menuRef && !menuRef.contains(event.target as Node)) {
+	// 		isMobileDropdownOpen = false;
+	// 		openDropdownIndex = null;
+	// 	}
+	// };
+
+	// ===============================================================================================
+
+	// EMAIL SERVICE
+
+	// ===============================================================================================
 
 	let name = '';
 	let email = '';
@@ -62,13 +136,19 @@
 		}
 	};
 
-	// Close when clicking outside
-	const handleClickOutside = (event: MouseEvent) => {
-		if (menuRef && !menuRef.contains(event.target as Node)) {
-			isMobileDropdownOpen = false;
-			openDropdownIndex = null;
+	// ===============================================================================================
+
+	onMount(() => {
+		if (typeof document !== 'undefined' && isMobile()) {
+			document.addEventListener('click', handleClickOutside);
 		}
-	};
+	});
+
+	onDestroy(() => {
+		if (typeof document !== 'undefined') {
+			document.removeEventListener('click', handleClickOutside);
+		}
+	});
 </script>
 
 <Bounded
@@ -128,11 +208,11 @@
 							<ul class="py-2">
 								{#each item.link as link, index}
 									{#if link}
-										{#if link.slug}
+										{#if link.uid}
 											<li>
 												<PrismicLink
 													class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
-													field={link}>{link.slug.replace(/-/g, ' ')}</PrismicLink
+													field={link}>{link.uid.replace(/-/g, ' ')}</PrismicLink
 												>
 											</li>
 										{/if}
@@ -166,10 +246,15 @@
 			<ButtonLink on:click={toggleContactModal} class="cursor-pointer">Contact</ButtonLink>
 		</div>
 
-		<ButtonLink
-			on:click={() => toggleMobileDropdown()}
-			class="cursor-pointer active:text-white md:text-base lg:hidden"
-			><svg
+		<button
+			bind:this={menuButtonRef}
+			on:click|stopPropagation={toggleMobileDropdown}
+			class={clsx(
+				'cursor-pointer relative inline-flex h-fit w-fit rounded-xl border border-orange-100/20 bg-orange-300/10 px-4 py-2 text-orange-200 outline-none ring-orange-300 transition-colors after:absolute after:inset-0 after:-z-10 after:animate-pulse after:rounded-full after:bg-orange-100 after:bg-opacity-0 after:blur-md after:transition-all after:duration-500 hover:border-orange-200/40 hover:text-orange-300 after:hover:bg-opacity-15 focus:ring-2 md:text-base lg:hidden',
+				className
+			)}
+		>
+			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-5 w-5"
 				viewBox="0 0 20 20"
@@ -180,8 +265,8 @@
 					d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
 					clip-rule="evenodd"
 				/>
-			</svg></ButtonLink
-		>
+			</svg>
+		</button>
 
 		<!-- buttons - end -->
 	</header>

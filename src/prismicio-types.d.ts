@@ -119,31 +119,6 @@ export interface NavigationDocumentDataLinksItem {
 }
 
 /**
- * Item in *Navigation → MobileNavigation*
- */
-export interface NavigationDocumentDataMobilenavigationItem {
-	/**
-	 * PageLink field in *Navigation → MobileNavigation*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: navigation.mobilenavigation[].pagelink
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	pagelink: prismic.LinkField;
-
-	/**
-	 * Label field in *Navigation → MobileNavigation*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: navigation.mobilenavigation[].label
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	label: prismic.RichTextField;
-}
-
-/**
  * Content for Navigation documents
  */
 interface NavigationDocumentData {
@@ -157,17 +132,6 @@ interface NavigationDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	links: prismic.GroupField<Simplify<NavigationDocumentDataLinksItem>>;
-
-	/**
-	 * MobileNavigation field in *Navigation*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: navigation.mobilenavigation[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#group
-	 */
-	mobilenavigation: prismic.GroupField<Simplify<NavigationDocumentDataMobilenavigationItem>>;
 }
 
 /**
@@ -2037,7 +2001,6 @@ declare module '@prismicio/client' {
 			NavigationDocument,
 			NavigationDocumentData,
 			NavigationDocumentDataLinksItem,
-			NavigationDocumentDataMobilenavigationItem,
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
