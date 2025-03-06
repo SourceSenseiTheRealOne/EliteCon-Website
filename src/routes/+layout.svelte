@@ -17,6 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href={$page.url} />
+	<script src="https://analytics.ahrefs.com/analytics.js" data-key="fAzQlIWh8JzpArHv6dagBw" async></script>
 
 	{#if $page.data.meta_description}
 		<meta name="description" content={$page.data.meta_description} />
