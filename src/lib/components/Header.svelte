@@ -303,13 +303,13 @@
 									>
 										<ul class="py-2">
 											{#each item.link as link}
-												{#if link && link.slug}
+												{#if link && link.uid}
 													<li>
 														<PrismicLink
 															class="block px-6 py-2 hover:bg-orange-300 hover:bg-opacity-85 text-white font-medium capitalize"
 															field={link}
 														>
-															{link.slug.replace(/-/g, ' ')}
+															{link.uid.replace(/-/g, ' ')}
 														</PrismicLink>
 													</li>
 												{/if}
