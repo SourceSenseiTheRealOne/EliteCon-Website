@@ -1,0 +1,12 @@
+# Allow all crawlers access to the site
+User-agent: *
+Allow: /
+
+# Disallow crawling specific parts of your site (e.g., admin pages)
+Disallow: /admin/
+
+# Prevent crawling unnecessary dynamic pages
+Disallow: /search/
+
+# Sitemap URL (important for SEO)
+Sitemap: https://www.elitecon.ca/sitemap.xml
