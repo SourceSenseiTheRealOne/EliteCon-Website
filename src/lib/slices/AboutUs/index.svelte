@@ -34,7 +34,7 @@
 
 		const templateParams = {
 			firstName,
-			lastName,
+			// lastName,
 			company,
 			email,
 			subject,
@@ -85,16 +85,16 @@
 			>
 				<div>
 					<label for="name" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"
-						>First name*</label
+						>Name*</label
 					>
 					<input
-						name="firstName"
+						name="name"
 						bind:value={firstName}
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-black outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
 				</div>
 
-				<div>
+				<!-- <div>
 					<label for="last-name" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"
 						>Last name*</label
 					>
@@ -103,7 +103,7 @@
 						name="lastName"
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-black  outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
-				</div>
+				</div> -->
 
 				<div class="sm:col-span-2">
 					<label for="company" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"
@@ -127,7 +127,7 @@
 					/>
 				</div>
 
-				<div class="sm:col-span-2">
+				<!-- <div class="sm:col-span-2">
 					<label for="subject" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"
 						>Subject*</label
 					>
@@ -136,7 +136,7 @@
 						name="subject"
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-black  outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
-				</div>
+				</div> -->
 
 				<div class="sm:col-span-2">
 					<label for="message" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"

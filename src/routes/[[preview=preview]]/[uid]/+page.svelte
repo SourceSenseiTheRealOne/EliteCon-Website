@@ -9,7 +9,7 @@
 <svelte:head>
 	<title>{data.page.data.meta_title || data.page.data.title}</title>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
 
 	<meta name="robots" content="index, follow" />
 

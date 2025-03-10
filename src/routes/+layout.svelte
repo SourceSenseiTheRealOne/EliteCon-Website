@@ -14,7 +14,7 @@
 <svelte:head>
 	<title>{$page.data.title}</title>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href={$page.url} />
 	<script src="https://analytics.ahrefs.com/analytics.js" data-key="fAzQlIWh8JzpArHv6dagBw" async></script>
@@ -40,11 +40,11 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={$page.url} />
 
-	<script
+	<!-- <script
 		async
 		defer
 		src="https://static.cdn.prismic.io/prismic.js?new=true&repo=elite-con-website"
-	></script>
+	></script> -->
 
 	<!-- JSON-LD Schema Markup -->
 	<script type="application/ld+json">
