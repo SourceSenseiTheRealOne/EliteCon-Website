@@ -47,7 +47,7 @@
 	></script> -->
 
 	<!-- JSON-LD Schema Markup -->
-	<script type="application/ld+json">
+	<!-- <script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
 			"@type": "WebSite",
@@ -60,7 +60,7 @@
 				"url": "https://elitecon.ca"
 			}
 		}
-	</script>
+	</script> -->
 </svelte:head>
 
 <div class="text-slate-800 grid w-full grid-cols-1 items-center">

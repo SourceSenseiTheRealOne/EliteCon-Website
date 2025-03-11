@@ -39,7 +39,7 @@
 	<link rel="canonical" href={$page.url} />
 
 	<!-- JSON-LD Schema Markup -->
-	<script type="application/ld+json">
+	<!-- <script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
 			"@type": "WebPage",
@@ -52,7 +52,7 @@
 				"url": "https://elitecon.ca"
 			}
 		}
-	</script>
+	</script> -->
 </svelte:head>
 
 <SliceZone slices={data.page.data.slices} {components} />

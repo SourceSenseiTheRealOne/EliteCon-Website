@@ -73,9 +73,9 @@
 		showGalleryModal = false;
 	}
 
-	$: console.log('showGalleryModal:', showGalleryModal);
+	// $: console.log('showGalleryModal:', showGalleryModal);
 
-	$: if (slice.primary) console.log(slice.primary, 'slice.primary.videolink');
+	// $: if (slice.primary) console.log(slice.primary, 'slice.primary.videolink');
 
 	onMount(() => {
 		// Initialize Swiper instance
@@ -152,7 +152,7 @@
 {#if showGalleryModal}
 	<div class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
 		<div
-			class="relative w-[800px] h-auto max-w-4xl bg-slate-100 bg-opacity-65 rounded-lg px-8 py-16"
+			class="relative w-full max-w-4xl md:w-[800px] h-auto bg-slate-100 bg-opacity-65 rounded-lg px-4 py-8 md:px-8 md:py-16"
 		>
 			<!-- <button
 				class="absolute top-2 right-2 text-white bg-yellow-600 rounded-full px-2.5 py-0.5 text-lg text-center font-bold"

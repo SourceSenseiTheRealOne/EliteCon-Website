@@ -26,7 +26,9 @@
 >
 	<div class="mx-auto">
 		<div class="flex flex-col items-center text-center w-full">
-			<PrismicRichText {components} field={slice.primary.title} />
+			<h2>
+				<PrismicRichText {components} field={slice.primary.title} />
+			</h2>
 		</div>
 		<div
 			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 items-center max-w-screen-xl mx-auto"
@@ -54,7 +56,7 @@
 								<div
 									class="text-white text-center group-hover:text-orange-300 cursor-pointer mb-3 uppercase transition-colors px-20"
 								>
-									<PrismicRichText  field={item.title} />
+									<PrismicRichText field={item.title} />
 								</div>
 							</PrismicLink>
 						</div>

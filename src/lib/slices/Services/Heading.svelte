@@ -4,6 +4,6 @@
 	export let children: any;
 </script>
 
-<Heading   className="mb-4 mt-12 text-center text-4xl first:mt-0 last:mb-0">
+<Heading className="text-center text-4xl lg:text-6xl font-medium  first:mt-0 last:mb-0">
 	<slot />
 </Heading>

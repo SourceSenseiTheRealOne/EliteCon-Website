@@ -44,7 +44,7 @@
 		try {
 			const response = await emailjs.send(serviceID, templateID, templateParams, userID);
 			alert('Email sent successfully!');
-			console.log('EmailJS Response:', response);
+			// console.log('EmailJS Response:', response);
 
 			// Reset form fields
 
@@ -83,12 +83,12 @@
 				on:submit|preventDefault={sendEmail}
 				class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2"
 			>
-				<div>
-					<label for="name" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"
+				<div class="sm:col-span-2">
+					<label for="firstName" class="mb-2 inline-block text-sm text-orange-200 sm:text-base"
 						>Name*</label
 					>
 					<input
-						name="name"
+						name="firstName"
 						bind:value={firstName}
 						class="w-full rounded border bg-gray-50 px-3 py-2 text-black outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
