@@ -2,26 +2,24 @@
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
-
-	import CustomHeading from '$lib/components/ui/CustomHeading.svelte';
+	import Heading2 from '../../components/ui/Heading2.svelte';
 
 	export let slice: Content.ProjectsSlice;
-
-	const components: PrismicRichText['components'] = {
-		heading2: CustomHeading
-	};
-
-	// project_page_link
 </script>
 
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="text-white py-4 lg:px-24 lg:py-8 flex items-center mb-12"
+	class="text-white py-4 lg:px-24 lg:py-8 flex items-center mb-4"
 >
 	<div class="mx-auto">
-		<div class="flex flex-col items-center text-center w-full">
-			<PrismicRichText {components} field={slice.primary.title} />
+		<div class="rich-text">
+			<PrismicRichText
+				field={slice.primary.title}
+				components={{
+					heading2: Heading2
+				}}
+			/>
 		</div>
 		<div
 			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 items-center max-w-screen-xl mx-auto"
@@ -44,15 +42,7 @@
 						<div
 							class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity"
 						></div>
-						<!-- <div class="px-4 py-6 relative z-10 w-full h-full flex items-center justify-center">
-							<PrismicLink field={item.project_page_link}>
-								<h3
-									class="title-font font-medium text-white group-hover:text-orange-300 cursor-pointer mb-3 uppercase transition-colors"
-								>
-									<PrismicRichText field={item.title} />
-								</h3>
-							</PrismicLink>
-						</div> -->
+
 						<div class="px-4 py-6 relative z-10 w-full h-full flex items-center justify-center">
 							<PrismicLink field={item.project_page_link}>
 								<div
@@ -73,5 +63,9 @@
 	.custom__size__boxes {
 		width: 36rem;
 		height: 17rem;
+	}
+
+	.rich-text {
+		margin-bottom: 2rem;
 	}
 </style>

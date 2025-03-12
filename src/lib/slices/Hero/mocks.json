@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Typical"
-						}
-					}
-				]
-			},
 			"buttonText": {
 				"__TYPE__": "FieldContent",
 				"value": "matter",
@@ -49,6 +38,17 @@
 						"type": "paragraph",
 						"content": {
 							"text": "Duis veniam voluptate exercitation laboris duis est voluptate. Veniam fugiat amet dolor cupidatat sunt aliquip duis quis aliqua eiusmod nulla duis sunt officia."
+						}
+					}
+				]
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim pariatur minim aute voluptate amet velit veniam non elit ut dolore reprehenderit tempor. Occaecat commodo enim nisi et nulla amet exercitation qui reprehenderit ipsum ex."
 						}
 					}
 				]

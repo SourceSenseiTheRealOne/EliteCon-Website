@@ -1,11 +1,5 @@
-<!-- <h2 class="text-4xl lg:text-6xl mb-4 font-medium text-nowrap text-orange-200 text-center">
-    <PrismicRichText field={slice.primary.title} />
-</h2> -->
 
-<script lang="ts">
-	export let children: any;
-</script>
 
-<h2 class="text-4xl lg:text-6xl mb-4 font-medium text-center  text-orange-200 text-balance">
+<h2 class="text-4xl uppercase  lg:text-6xl md:text-6xl text-orange-200 text-center font-medium">
 	<slot />
 </h2>

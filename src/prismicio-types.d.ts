@@ -711,14 +711,14 @@ export type FrequentQuestionsSlice = prismic.SharedSlice<
  */
 export interface HeroSliceDefaultPrimary {
 	/**
-	 * Text field in *Hero → Default → Primary*
+	 * Heading field in *Hero → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.default.primary.text
+	 * - **API ID Path**: hero.default.primary.heading
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	text: prismic.RichTextField;
+	heading: prismic.RichTextField;
 
 	/**
 	 * Button Text field in *Hero → Default → Primary*

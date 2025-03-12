@@ -2,23 +2,10 @@
 	import ButtonLink from '$lib/components/ButtonLink.svelte';
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import type { Content } from '@prismicio/client';
-
 	import OrangeHeading from '$lib/components/ui/OrangeHeading.svelte';
-
 	import emailjs from '@emailjs/browser';
 
 	export let slice: Content.AboutUsSlice;
-
-	const components: PrismicRichText['components'] = {
-		heading2: OrangeHeading
-	};
-
-	// 	- first name
-	// - last name
-	// - company
-	// - email
-	// - subject
-	// - message
 
 	let firstName = '';
 	let lastName = '';
@@ -64,12 +51,19 @@
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="bg-black text-white py-4 lg:px-24 lg:py-8 flex items-center mb-4"
+	class="bg-black text-white py-4 lg:px-24 lg:py-8 flex items-center mb-2"
 >
 	<div class="mx-auto max-w-screen-2xl px-4 md:px-8 lg:flex lg:flex-row lg:gap-8">
 		<!-- text - start -->
 		<div class="mb-10 md:mb-16">
-			<PrismicRichText {components} field={slice.primary.title} />
+			<div class="rich-text">
+				<PrismicRichText
+					field={slice.primary.title}
+					components={{
+						heading2: OrangeHeading
+					}}
+				/>
+			</div>
 
 			<p class="mx-auto max-w-screen-md text-center text-white md:text-lg">
 				<PrismicRichText field={slice.primary.description} />
@@ -77,7 +71,7 @@
 		</div>
 		<!-- text - end -->
 
-		<div>
+		<div class="mt-5">
 			<!-- form - start -->
 			<form
 				on:submit|preventDefault={sendEmail}
@@ -112,7 +106,7 @@
 					<input
 						bind:value={company}
 						name="company"
-						class="w-full rounded border bg-gray-50 px-3 py-2 text-black  outline-none ring-orange-300 transition duration-100 focus:ring"
+						class="w-full rounded border bg-gray-50 px-3 py-2 text-black outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
 				</div>
 
@@ -123,7 +117,7 @@
 					<input
 						name="email"
 						bind:value={email}
-						class="w-full rounded border bg-gray-50 px-3 py-2 text-black  outline-none ring-orange-300 transition duration-100 focus:ring"
+						class="w-full rounded border bg-gray-50 px-3 py-2 text-black outline-none ring-orange-300 transition duration-100 focus:ring"
 					/>
 				</div>
 
@@ -145,7 +139,7 @@
 					<textarea
 						name="message"
 						bind:value={message}
-						class="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-black  outline-none ring-orange-300 transition duration-100 focus:ring"
+						class="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-black outline-none ring-orange-300 transition duration-100 focus:ring"
 					></textarea>
 				</div>
 
@@ -171,3 +165,11 @@
 		</div>
 	</div>
 </section>
+
+<style>
+
+	.rich-text {
+		margin-bottom: 2rem;
+		margin-top: 1rem;
+	}
+</style>

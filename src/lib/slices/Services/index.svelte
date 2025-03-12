@@ -2,21 +2,9 @@
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
-
-	import CustomHeading from '$lib/components/ui/CustomHeading.svelte';
-	import Heading from './Heading.svelte';
+	import Heading2 from '../../components/ui/Heading2.svelte';
 
 	export let slice: Content.ServicesSlice;
-
-	const components: PrismicRichText['components'] = {
-		heading2: CustomHeading
-	};
-
-	const servicesTitleHover: PrismicRichText['components'] = {
-		heading2: Heading
-	};
-
-	// $: if (slice.primary.card) console.log(slice.primary.card, 'slice.primary.card ');
 </script>
 
 <section
@@ -25,10 +13,13 @@
 	class="text-white py-4 lg:px-24 lg:py-8 flex items-center mb-4"
 >
 	<div class="mx-auto">
-		<div class="flex flex-col items-center text-center w-full">
-			<h2>
-				<PrismicRichText {components} field={slice.primary.title} />
-			</h2>
+		<div class="rich-text">
+			<PrismicRichText
+				field={slice.primary.title}
+				components={{
+					heading2: Heading2
+				}}
+			/>
 		</div>
 		<div
 			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 items-center max-w-screen-xl mx-auto"
@@ -71,5 +62,10 @@
 	.custom__size__boxes {
 		width: 36rem;
 		height: 17rem;
+	}
+
+	.rich-text {
+		margin-bottom: 2rem;
+		margin-top: 1rem;
 	}
 </style>

@@ -31,7 +31,7 @@
 
 				<PrismicRichText {components} field={slice.primary.title} />
 
-				<p class="mb-6 text-gray-500 sm:text-lg md:mb-8">
+				<p class="pb-6 text-gray-500 sm:text-lg md:pb-8">
 					<PrismicRichText field={slice.primary.description} />
 				</p>
 			</div>

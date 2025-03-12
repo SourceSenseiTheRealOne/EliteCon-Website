@@ -8,9 +8,9 @@
 
 <svelte:head>
 	<title>{data.page.data.meta_title || data.page.data.title}</title>
-	<meta charset="UTF-8" />
+	<!-- <meta charset="UTF-8" /> -->
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
-	<meta name="robots" content="index, follow" />
+	<!-- <meta name="robots" content="index, follow" /> -->
 
 	<script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=elite-con-website"></script>
 
@@ -31,7 +31,7 @@
 	{/if}
 
 	<!-- Canonical URL -->
-	<link rel="canonical" href={$page.url} />
+	<!-- <link rel="canonical" href={$page.url} /> -->
 
 	<!-- JSON-LD Schema Markup -->
 	<!-- <script type="application/ld+json">

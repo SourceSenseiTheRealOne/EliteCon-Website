@@ -27,11 +27,11 @@ onMount(() => {
 </script>
 
 <section >
-<div class="px-4 py-1 mx-auto">
+<!-- <div class="px-4 py-1 mx-auto">
     <div class="flex flex-col gap-4">
       
     </div>
-</div>
+</div> -->
 <div class="bg-black text-white pt-4 sm:pt-10 lg:pt-12">
     <footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
        

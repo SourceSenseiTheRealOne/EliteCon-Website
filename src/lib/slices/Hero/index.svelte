@@ -1,20 +1,13 @@
 <script lang="ts">
 	import { asText, isFilled, type Content } from '@prismicio/client';
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
-
-	import Bounded from '$lib/components/Bounded.svelte';
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
-
-	import Heading from './Heading.svelte';
+	import Heading from '../../components/ui/Heading.svelte';
 	import ButtonLink from '$lib/components/ButtonLink.svelte';
 
 	export let slice: Content.HeroSlice;
 
 	import emailjs from '@emailjs/browser';
-
-	const components: PrismicRichText['components'] = {
-		heading1: Heading
-	};
 
 	let isBgImageFound = false;
 
@@ -31,8 +24,6 @@
 				: slice.primary.videolink;
 		}
 	}
-
-	// console.log(slice.primary.backgroundImage, 'slice.primary.backgroundImage');
 
 	let isContactModalOpen = false;
 
@@ -58,7 +49,7 @@
 		try {
 			const response = await emailjs.send(serviceID, templateID, templateParams, userID);
 			alert('Email sent successfully!');
-			console.log('EmailJS Response:', response);
+			// console.log('EmailJS Response:', response);
 
 			// Reset form fields
 			name = '';
@@ -105,10 +96,15 @@
 	<div class="absolute left-0 top-0 h-full w-full bg-black opacity-50"></div>
 
 	<div class="video-content z-40 space-y-2">
-		<!-- <h1 class="text-6xl font-light mb-12">Luxury Outdoor <span class="text-orange-200">Spaces</span></h1> -->
-		
-			<PrismicRichText {components} field={slice.primary.text} />
-		
+		<div class="rich-text">
+			<PrismicRichText
+				field={slice.primary.heading}
+				components={{
+					heading1: Heading
+				}}
+			/>
+		</div>
+
 		<ButtonLink on:click={toggleContactModal} class="cursor-pointer"
 			>{slice.primary.buttonText}</ButtonLink
 		>
@@ -285,3 +281,10 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	.rich-text {
+		margin: 2rem 0;
+		
+	}
+</style>

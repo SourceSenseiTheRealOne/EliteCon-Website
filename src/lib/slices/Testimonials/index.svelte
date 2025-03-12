@@ -1,24 +1,27 @@
 <script lang="ts">
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
-	import Heading from './Heading.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage } from '@prismicio/svelte';
+	import OrangeHeading from '$lib/components/ui/OrangeHeading.svelte';
 
 	export let slice: Content.TestimonialsSlice;
 
-	const components: PrismicRichText['components'] = {
-		heading2: Heading
-	};
+
 </script>
 
 <section
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
-	class="bg-black text-white py-4 lg:px-24 lg:py-8 flex items-center mb-2"
+	class="bg-black text-white py-4 lg:px-24 lg:py-12 flex items-center mb-2"
 >
 	<div class="mx-auto max-w-screen-xl px-4 md:px-8">
-		<div class="mb-12">
-			<PrismicRichText {components} field={slice.primary.title} />
+		<div class="rich-text">
+			<PrismicRichText
+				field={slice.primary.title}
+				components={{
+					heading2: OrangeHeading
+				}}
+			/>
 		</div>
 
 		<div class="grid gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3 lg:divide-x">
@@ -55,3 +58,11 @@
 		</div>
 	</div>
 </section>
+
+<style>
+
+	.rich-text {
+		margin-bottom: 2rem;
+		margin-top: 1rem;
+	}
+</style>

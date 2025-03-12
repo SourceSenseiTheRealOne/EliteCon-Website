@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { Content } from '@prismicio/client';
-	import CustomHeading from '$lib/components/ui/CustomHeading.svelte';
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
+	import Heading2 from '$lib/components/ui/Heading2.svelte';
 
 	export let slice: Content.LatestBlogsSlice;
 
 	const components: PrismicRichText['components'] = {
-		heading2: CustomHeading
+		heading2: Heading2
 	};
 </script>
 
@@ -18,12 +18,13 @@
 >
 	<div class="mx-auto max-w-screen-6xl px-4 md:px-8">
 		<!-- text - start -->
-		<div class="mb-8 md:mb-16 items-center flex flex-col justify-center text-center">
-			<PrismicRichText {components} field={slice.primary.title} />
-
-			<p class="mx-auto min-w-screen-md text-center text-gray-500 md:text-lg">
-				<PrismicRichText field={slice.primary.description} />
-			</p>
+		<div class="rich-text">
+			<PrismicRichText
+				field={slice.primary.title}
+				components={{
+					heading2: Heading2
+				}}
+			/>
 		</div>
 		<!-- text - end -->
 
@@ -62,3 +63,10 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.rich-text {
+		margin-bottom: 2rem;
+		margin-top: 1rem;
+	}
+</style>
