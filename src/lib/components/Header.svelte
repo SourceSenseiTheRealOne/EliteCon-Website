@@ -189,7 +189,8 @@
 								class="text-lg font-normal cursor-pointer text-white transition duration-100 hover:text-orange-200 active:text-orange-300"
 							>
 								<PrismicLink field={item.mainlinkitem}>
-									<a href={item.mainlinkitem?.text} class="sr-only">Link</a>
+								
+									<p class="sr-only">To see all of our basketball videos, <a class="sr-only"" href={item.mainlinkitem?.text}>click here</a>.</p>
 									<PrismicText field={item.label} />
 								</PrismicLink>
 							</li>
