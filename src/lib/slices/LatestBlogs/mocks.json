@@ -89,11 +89,11 @@
 								"postlink",
 								{
 									"__TYPE__": "LinkContent",
-									"key": "e5a150ae-142b-4001-9edb-5b5d1d312782",
+									"key": "4610a83c-62d7-4499-b6ef-9173f293027b",
 									"value": {
 										"__TYPE__": "ExternalLink",
-										"url": "http://google.com",
-										"text": "island"
+										"url": "http://twitter.com",
+										"text": "sense"
 									}
 								}
 							]

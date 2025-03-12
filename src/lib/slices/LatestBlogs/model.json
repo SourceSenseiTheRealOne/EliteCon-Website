@@ -66,7 +66,7 @@
                 "type": "Link",
                 "config": {
                   "label": "PostLink",
-                  "placeholder": "",
+                  "placeholder": "blog_link",
                   "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,

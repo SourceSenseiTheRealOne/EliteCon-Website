@@ -1035,7 +1035,7 @@ export interface LatestBlogsSliceDefaultPrimaryCardItem {
 	 * PostLink field in *LatestBlogs → Default → Primary → Card*
 	 *
 	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: blog_link
 	 * - **API ID Path**: latest_blogs.default.primary.card[].postlink
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
