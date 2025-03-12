@@ -29,6 +29,7 @@
         },
         "backgroundImage": {
           "type": "Image",
+          "alt": "hero_image",
           "config": {
             "label": "Background Image",
             "constraint": {},

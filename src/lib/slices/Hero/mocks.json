@@ -27,7 +27,7 @@
 					"background": "transparent"
 				},
 				"credits": null,
-				"alt": null,
+				"alt": "hero_image",
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
