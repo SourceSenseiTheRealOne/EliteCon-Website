@@ -17,7 +17,7 @@ import Heading2 from '$lib/components/ui/Heading2.svelte';
 	export let slice: Content.PortfolioSlice;
 
 	const components: PrismicRichText['components'] = {
-		heading2: Heading
+		heading2: Heading2
 	};
 
 	let showGalleryModal = false;
