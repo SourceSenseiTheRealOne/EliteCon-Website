@@ -190,7 +190,7 @@
 							>
 								<PrismicLink field={item.mainlinkitem}>
 								
-									<p class="sr-only">To see all of our basketball videos, <a class="sr-only"" href={item.mainlinkitem?.text}>click here</a>.</p>
+									<p class="sr-only">To see all of our blogs, <a class="sr-only" href={item.mainlinkitem?.text}>click here</a>.</p>
 									<PrismicText field={item.label} />
 								</PrismicLink>
 							</li>
