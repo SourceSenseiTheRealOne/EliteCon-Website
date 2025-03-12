@@ -57,6 +57,9 @@
 		openDropdownIndex = openDropdownIndex === index ? null : index;
 	};
 
+	$: if (navigation.data?.links) {
+		console.log(navigation.data?.links);
+	}
 	// ===============================================================================================
 
 	// EMAIL SERVICE
@@ -186,6 +189,7 @@
 								class="text-lg font-normal cursor-pointer text-white transition duration-100 hover:text-orange-200 active:text-orange-300"
 							>
 								<PrismicLink field={item.mainlinkitem}>
+									<a href={item.mainlinkitem?.text} class="sr-only">Link</a>
 									<PrismicText field={item.label} />
 								</PrismicLink>
 							</li>
