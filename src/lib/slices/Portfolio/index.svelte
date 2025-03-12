@@ -23,20 +23,8 @@ import Heading2 from '$lib/components/ui/Heading2.svelte';
 	let showGalleryModal = false;
 	let selectedImages = [];
 	let selectedVideo = null;
-
 	let swiperInstance;
 	let swiper;
-
-	// Function to open the gallery modal with relevant video and images
-	// function toggleGallery(e) {
-	// selectedVideo = item.videolink
-	// 	? Array.isArray(item.videolink)
-	// 		? asText(item.videolink)
-	// 		: item.videolink
-	// 	: null;
-	// selectedImages = [item.image, item.image2, item.image3].filter(Boolean);
-	// 	showGalleryModal = !showGalleryModal;
-	// }
 
 	function toggleGallery(e) {
 		showGalleryModal = !showGalleryModal;
@@ -105,7 +93,14 @@ import Heading2 from '$lib/components/ui/Heading2.svelte';
 	data-slice-variation={slice.variation}
 	class="py-6 sm:py-8 lg:py-12 mb-8 items-center"
 >
-	<PrismicRichText {components} field={slice.primary.title} />
+<div class="rich-text">
+	<PrismicRichText
+		field={slice.primary.title}
+		components={{
+			heading2: Heading2
+		}}
+	/>
+</div>
 
 	{#if slice.primary.videolink && slice.primary.videolink.length > 0}
 		<!-- Centered Video -->
@@ -351,5 +346,10 @@ import Heading2 from '$lib/components/ui/Heading2.svelte';
 		width: 70%;
 		height: 70%;
 		object-fit: cover;
+	}
+
+	.rich-text {
+		margin-bottom: 2rem;
+		margin-top: 1rem;
 	}
 </style>
