@@ -12,6 +12,7 @@
 	let isBgImageFound = false;
 
 	$: if (slice.primary.backgroundImage) {
+		console.log(slice.primary.backgroundImage.alt)
 		isBgImageFound = Object.keys(slice.primary.backgroundImage).length > 0;
 	}
 
@@ -72,7 +73,7 @@
 		<div class="absolute left-0 top-0 h-full w-full overflow-hidden">
 			<PrismicImage
 				class="absolute min-h-full min-w-full object-cover"
-				alt="hero_image"
+				alt={slice.primary.backgroundImage.alt}
 				field={slice.primary.backgroundImage}
 			/>
 		</div>
