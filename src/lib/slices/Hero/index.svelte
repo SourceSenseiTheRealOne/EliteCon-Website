@@ -72,7 +72,7 @@
 		<div class="absolute left-0 top-0 h-full w-full overflow-hidden">
 			<PrismicImage
 				class="absolute min-h-full min-w-full object-cover"
-				alt=""
+				alt="hero_image"
 				field={slice.primary.backgroundImage}
 			/>
 		</div>
