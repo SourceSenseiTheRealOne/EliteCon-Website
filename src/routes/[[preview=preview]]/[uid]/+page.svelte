@@ -8,10 +8,10 @@
 
 <svelte:head>
 	<title>{data.page.data.meta_title || data.page.data.title}</title>
-	<!-- <meta charset="UTF-8" /> -->
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- <meta name="robots" content="index, follow" /> -->
+	<meta name="robots" content="index, follow" />
 
 	<script
 		async
@@ -36,10 +36,10 @@
 	{/if}
 
 	<!-- Canonical URL -->
-	<!-- <link rel="canonical" href={$page.url} /> -->
+	<link rel="canonical" href={$page.url} />
 
 	<!-- JSON-LD Schema Markup -->
-	<!-- <script type="application/ld+json">
+	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
 			"@type": "WebPage",
@@ -52,7 +52,7 @@
 				"url": "https://elitecon.ca"
 			}
 		}
-	</script> -->
+	</script>
 </svelte:head>
 
 <SliceZone slices={data.page.data.slices} {components} />
