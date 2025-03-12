@@ -3,7 +3,7 @@
 	import { PrismicImage, PrismicLink, PrismicRichText } from '@prismicio/svelte';
 	import { tick } from 'svelte';
 
-	import Heading from './Heading.svelte';
+import Heading2 from '$lib/components/ui/Heading2.svelte';
 
 	import Swiper from 'swiper';
 	import { Navigation, Pagination } from 'swiper/modules';

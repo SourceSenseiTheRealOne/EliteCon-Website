@@ -105,6 +105,8 @@
 			/>
 		</div>
 
+		<a href="/contact" class="sr-only">{slice.primary.buttonText}</a>
+
 		<ButtonLink on:click={toggleContactModal} class="cursor-pointer"
 			>{slice.primary.buttonText}</ButtonLink
 		>
@@ -285,6 +287,5 @@
 <style>
 	.rich-text {
 		margin: 2rem 0;
-		
 	}
 </style>

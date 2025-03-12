@@ -201,6 +201,7 @@
 		<div
 			class="-ml-8 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start"
 		>
+			<a href="/contact" class="sr-only">Contact</a>
 			<ButtonLink on:click={toggleContactModal} class="cursor-pointer">Contact</ButtonLink>
 		</div>
 
