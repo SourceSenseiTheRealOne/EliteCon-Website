@@ -55,6 +55,7 @@
 						</h2>
 
 						<PrismicLink field={item.postlink}>
+							<a href="/blogs" class="sr-only">Navigation links for EliteCon blogs</a>
 							<span class="font-semibold text-orange-200">Read more</span>
 						</PrismicLink>
 					</div>
