@@ -189,8 +189,11 @@
 								class="text-lg font-normal cursor-pointer text-white transition duration-100 hover:text-orange-200 active:text-orange-300"
 							>
 								<PrismicLink field={item.mainlinkitem}>
-								
-									<p class="sr-only">To see all of our blogs, <a class="sr-only" href={item.mainlinkitem?.text}>click here</a>.</p>
+									<p class="sr-only">
+										Navigation links <a class="sr-only" href={item.mainlinkitem?.text}
+											>Navigation links of the EliteCon website.</a
+										>
+									</p>
 									<PrismicText field={item.label} />
 								</PrismicLink>
 							</li>
