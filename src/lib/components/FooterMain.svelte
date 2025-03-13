@@ -211,6 +211,7 @@ onMount(() => {
                         {#each item.link as link (link.key)}
                             {#if link && link.text}
                                 <div>
+                                    <a href="https://www.elitecon.ca/" class="sr-only">Bottom navigation links</a>
                                     <PrismicLink
                                         class="text-white transition duration-100 hover:text-orange-300 focus:ring-2 focus:ring-orange-300 cursor-pointer"
                                         field={link}
