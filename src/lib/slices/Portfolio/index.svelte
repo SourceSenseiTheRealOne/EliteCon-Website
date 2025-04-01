@@ -136,7 +136,7 @@ import Heading2 from '$lib/components/ui/Heading2.svelte';
 		>
 			{#each slice.primary.imggallery as item}
 				<PrismicImage
-					class="w-full h-[300px] object-cover rounded-lg shadow-lg cursor-pointer"
+					class="w-full h-[300px] object-cover rounded-lg  shadow-lg cursor-pointer"
 					field={item.image}
 				/>
 			{/each}
@@ -147,7 +147,7 @@ import Heading2 from '$lib/components/ui/Heading2.svelte';
 {#if showGalleryModal}
 	<div class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
 		<div
-			class="relative w-full max-w-4xl md:w-[800px] h-auto bg-slate-100 bg-opacity-65 rounded-lg px-4 py-8 md:px-8 md:py-16"
+			class="relative w-full max-w-4xl md:w-[800px] h-auto bg-slate-100 bg-opacity-65 rounded-lg px-4 py-12 md:px-8 md:py-16"
 		>
 			<!-- <button
 				class="absolute top-2 right-2 text-white bg-yellow-600 rounded-full px-2.5 py-0.5 text-lg text-center font-bold"
@@ -162,8 +162,8 @@ import Heading2 from '$lib/components/ui/Heading2.svelte';
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 28 28"
 					><path
-						fill="#9B5F3E"
-						color="#9B5F3E"
+						fill="#FFFFFF"
+						color="#FFFFFF"
 						d="M18.28 9.72a.75.75 0 0 1 0 1.06L15.06 14l3.22 3.22a.75.75 0 1 1-1.06 1.06L14 15.06l-3.22 3.22a.75.75 0 1 1-1.06-1.06L12.94 14l-3.22-3.22a.75.75 0 1 1 1.06-1.06L14 12.94l3.22-3.22a.75.75 0 0 1 1.06 0M26 14c0-6.627-5.373-12-12-12S2 7.373 2 14s5.373 12 12 12s12-5.373 12-12M3.5 14C3.5 8.201 8.201 3.5 14 3.5S24.5 8.201 24.5 14S19.799 24.5 14 24.5S3.5 19.799 3.5 14"
 					/></svg
 				>
